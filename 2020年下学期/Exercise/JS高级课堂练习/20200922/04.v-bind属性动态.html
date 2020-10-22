@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+
+        <h1 v-bind:title='title77' class="red">
+            城阙辅三秦，风烟望五津。
+            与君离别意，同是宦游人。
+            海内存知己，天涯若比邻。
+            无为在歧路，儿女共沾巾。
+        </h1>
+
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        const vm = Vue.createApp({
+            data() {
+                return {
+                    msg: '<p>当代大学生毕业现状</p>',
+                    title77: '文字',
+                }
+            }
+        })
+
+
+        // var vm = Vue.createApp({
+        //     data() {
+        //         return {
+        //             msg: '肯德基覅'
+        //         }
+        //     }
+        // })
+
+        vm.mount('#app')
+        console.log(vm.$data);
+
+    </script>
+
+</body>
+
+</html>

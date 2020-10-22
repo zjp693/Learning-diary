@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/weibo.css">
+</head>
+
+<body>
+  <div class="w">
+    <!-- 操作的界面 -->
+    <div class="controls">
+      <img src="images/tip.png" alt=""><br>
+      <textarea placeholder="说点什么吧..." id="area" cols="30" rows="10" maxlength="200"></textarea>
+      <div>
+        <span class="useCount">0</span>
+        <span>/</span>
+        <span>200</span>
+        <button id="send">发布</button>
+      </div>
+
+    </div>
+    <!-- 微博内容列表 -->
+    <div class="contentList">
+      <ul>
+        <!-- <li>
+          <div class="info"><img src="images/03.jpg"><span>宇智波鼬</span>
+            <p>2020/3/16 下午1:00:29</p>
+          </div>
+          <div class="content">你好</div>
+        </li> -->
+      </ul>
+    </div>
+  </div>
+
+
+  <script>
+    //  功能1: 在微博发布的时候 随着内容的输入，可以看出自己输入了多少字
+    //  功能2: 点击发布按钮，如果有内容，则可以把微博发布到输入框下面的页面中 如果没有内容 就提示内容不能为空
+    //  功能3: 输入框内容要清空
+
+    // 统一在这里获取元素 输入框textarea  输入字多少 按钮 
+    let oArea = document.querySelector('#area');
+    let useCount = document.querySelector('.useCount');
+    let sendBtn = document.querySelector('#send');
+    let oUl = document.querySelector('ul');
+
+    // 功能一: 在微博发布的时候 随着内容的输入，可以看出自己输入了多少字(oninpt 当键盘输入内容的时候 这个事件不断触发)
+
+    // 步骤: 
+    // 1.获取元素
+    // 2.当在area中输入内容的时候 触发oniput事件
+    oArea.oninput = function () {
+      // 3.把area中的值的长度设置给useCount
+      // console.log("22222");
+      // console.log(this.value.length);
+      useCount.innerText = this.value.trim().length;
+    }
+
+    // 功能2: 点击发布按钮，如果有内容，则可以把微博发布到输入框下面的页面中 如果没有内容 就提示内容不能为空
+
+    // 步骤:
+    // 1.点击发布按钮
+    sendBtn.onclick = function () {
+      // 2.判断输入框中的内容是否为空
+      if (oArea.value.trim().length == 0) {
+        // 2.1 如果为空 提示用户
+        alert("内容不能为空,说点什么吧!!");
+      } else {
+        // 2.2 如果不为空,构建微博结构
+        // 2.2.1 创建li元素
+        let li = document.createElement('li');
+        // <li>   <div class="info"><img src="images/03.jpg"><span>宇智波鼬</span>
+        //     // 2020/3/16 下午1:00:29
+        //     <p>${new Date().toLocaleString()}</p>
+        //   </div>
+        //   <div class="content">${oArea.value}</div></li>
+        // 2.2.2 在li中构建 微博内容
+        let str = `
+           <div class="info"><img src="images/03.jpg"><span>宇智波鼬</span>
+            <p>${new Date().toLocaleString()}</p>
+          </div>
+          <div class="content">${oArea.value}</div>
+        `
+        // 2.2.3 把微博内容写到li中去
+        li.innerHTML = str;
+        // 2.2.4 构建好内容的li添加到ul中(最新的微博放在最前面)
+        // oUl.insertBefore(li, oUl.childNodes[0]);
+        // 
+        oUl.insertBefore(li, oUl.children[0]);
+
+        //  功能3: 输入框内容要清空
+        oArea.value = "";
+        useCount.innerText = 0;
+      }
+
+    }
+
+
+  </script>
+</body>
+
+</html>

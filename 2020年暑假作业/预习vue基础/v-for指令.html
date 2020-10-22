@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <button @click='add'>添加数据</button>
+        <button @click='remove'>删除数据</button>
+        <ul>
+            <li v-for="(it,index) in arr">
+                {{index+1}} 瞅我干嘛：{{ it }}
+            </li>
+            <h2 v-for='item in str'>
+                {{item.name_2}}
+                {{item.name}}
+            </h2>
+        </ul>
+    </div>
+
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+        let vm = new Vue({
+            el: '#app',
+            data: {
+                arr: ["中国特色社会主义道路自信", "理论自信", "制度自信", "文化自信"],
+                str: [
+                    { name: '实时反馈' },
+                    { name_2: '反倒是离开家' }
+                ]
+            },
+            methods: {
+                add: function () {
+
+                    this.str.push({ name: '我是新来的' })
+                },
+                remove: function () {
+                    this.str.shift()
+                }
+            }
+        })
+
+    </script>
+
+</body>
+
+</html>

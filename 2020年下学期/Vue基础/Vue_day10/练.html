@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <todo-list :list='list'>
+            <!-- <i class="fas fa-check"></i> -->
+            <!-- <span class="green">{{ item }}</span> -->
+
+            <template #slotProps>
+                <strong v-if='slotProps.info.id==2' class="current">{{slotProps.info.name}}</strong>
+                <hr>
+                <br>
+                <!-- <span v-else>{{slotProps.info.name}}</span> -->
+
+            </template>
+        </todo-list>
+        <child></child>
+    </div>
+    <script src="../lib/Vue3.0.js"></script>
+    <script>
+        var vm = Vue.createApp({
+            data() {
+                return {
+                    list: [
+                        {
+                            id: 1,
+                            name: '张三'
+                        },
+                        {
+                            id: 2,
+                            name: '李四'
+                        },
+                        {
+                            id: 3,
+                            name: '王五'
+                        },
+                    ]
+                }
+            }
+        })
+
+
+
+
+
+
+
+        //         vm.component('todo-list', {
+        //             props: ['list'],
+        //             template: `
+        //     <ul>
+        //       <li v-for="(item, index) in list">
+        //        <p :info="item">{{item.name}} </p>
+        //       </li>
+        //     </ul>
+        //   `
+        //         })
+
+        vm.component('child', {
+            template: `<div>
+                            <p >这是子组件中正常渲染的内容</p>                            
+                         </div>`
+        })
+
+
+        vm.mount('#app')
+
+    </script>
+</body>
+
+</html>

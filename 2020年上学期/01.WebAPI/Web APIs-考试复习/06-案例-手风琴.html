@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html,
+    body,
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    div {
+      width: 1150px;
+      height: 400px;
+      margin: 50px auto;
+      border: 1px solid #ccc;
+      overflow: hidden;
+    }
+
+    ul {
+      list-style: none;
+      width: 1300px;
+    }
+
+    li {
+      width: 240px;
+      height: 400px;
+      float: left;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="box">
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+
+  <!-- 1.引入animate插件 -->
+  <script src="./js/animate.js"></script>
+  <!-- 2.写具体的代码 -->
+  <script>
+    // 把图片加入到li中
+    let list = document.querySelectorAll('li');
+    for (let i = 0; i < list.length; i++) {
+      list[i].style.backgroundImage = `url(./image/${i + 1}.jpg)`;
+      // 鼠标移入某一个li 让li的宽度变化 800  让其他的变成100
+      list[i].onmouseover = handleOver;
+      // 鼠标移出 让li恢复
+      list[i].onmouseout = handleOut;
+    }
+
+    // 处理鼠标移入
+    function handleOver() {
+      for (let j = 0; j < list.length; j++) {
+        animate(list[j], { width: 100 })
+      }
+      animate(this, { width: 800 });
+    }
+
+    // 处理鼠标移出
+    function handleOut() {
+      for (let j = 0; j < list.length; j++) {
+        animate(list[j], { width: 240 })
+      }
+    }
+  </script>
+</body>
+
+</html>

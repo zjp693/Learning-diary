@@ -1,0 +1,22 @@
+div {
+  background-color: red;
+  width: 200px;
+}
+
+body {
+  height: 500px;
+  width: 500px;
+  text-align: center;
+}
+
+body:after,
+body:before {
+  content: "";
+  display: table;
+}
+
+body:after {
+  clear: both;
+}
+
+/*# sourceMappingURL=nav.css.map */

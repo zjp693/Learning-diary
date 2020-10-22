@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>楚乔传</title>
+    <style>
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        .box {
+            width: 250px;
+            height: 166px;
+            position: relative;
+            margin: 140px auto;
+            border: 1px solid #ddd;
+        }
+
+        .box img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transition: all 1s;
+            transform-origin: 250px 166px;
+        }
+
+        .box:hover img:nth-child(1) {
+            transform: rotate(60deg);
+            animation: skin1 10s linear 2s infinite;
+        }
+
+        @keyframes skin1 {
+            0% {
+                transform: rotate(60deg);
+            }
+
+            20% {
+                transform: rotate(120deg);
+            }
+
+            40% {
+                transform: rotate(180deg);
+            }
+
+            60% {
+                transform: rotate(240deg);
+            }
+
+            80% {
+                transform: rotate(300deg);
+            }
+
+            90% {
+                transform: rotate(360deg);
+            }
+
+            100% {
+                transform: rotate(420deg);
+            }
+        }
+
+        .box:hover img:nth-child(2) {
+            transform: rotate(120deg);
+            animation: skin2 10s linear 2s infinite;
+        }
+
+        @keyframes skin2 {
+            0% {
+                transform: rotate(120deg);
+            }
+
+            20% {
+                transform: rotate(180deg);
+            }
+
+            40% {
+                transform: rotate(240deg);
+            }
+
+            60% {
+                transform: rotate(300deg);
+            }
+
+            80% {
+                transform: rotate(360deg);
+            }
+
+            90% {
+                transform: rotate(420deg);
+            }
+
+            100% {
+                transform: rotate(480deg);
+            }
+        }
+
+        .box:hover img:nth-child(3) {
+            transform: rotate(180deg);
+            animation: skin3 10s linear 2s infinite;
+        }
+
+        @keyframes skin3 {
+            0% {
+                transform: rotate(180deg);
+            }
+
+            20% {
+                transform: rotate(240deg);
+            }
+
+            40% {
+                transform: rotate(300deg);
+            }
+
+            60% {
+                transform: rotate(360deg);
+            }
+
+            80% {
+                transform: rotate(420deg);
+            }
+
+            90% {
+                transform: rotate(480deg);
+            }
+
+            100% {
+                transform: rotate(540deg);
+            }
+        }
+
+        .box:hover img:nth-child(4) {
+            transform: rotate(240deg);
+            animation: skin4 10s linear 2s infinite;
+        }
+
+        @keyframes skin4 {
+            0% {
+                transform: rotate(240deg);
+            }
+
+            20% {
+                transform: rotate(300deg);
+            }
+
+            40% {
+                transform: rotate(360deg);
+            }
+
+            60% {
+                transform: rotate(420deg);
+            }
+
+            80% {
+                transform: rotate(480deg);
+            }
+
+            90% {
+                transform: rotate(540deg);
+            }
+
+            100% {
+                transform: rotate(600deg);
+            }
+        }
+
+        .box:hover img:nth-child(5) {
+            transform: rotate(300deg);
+            animation: skin5 10s linear 2s infinite;
+        }
+
+        @keyframes skin5 {
+            0% {
+                transform: rotate(300deg);
+            }
+
+            20% {
+                transform: rotate(360deg);
+            }
+
+            40% {
+                transform: rotate(420deg);
+            }
+
+            60% {
+                transform: rotate(480deg);
+            }
+
+            80% {
+                transform: rotate(540deg);
+            }
+
+            90% {
+                transform: rotate(600deg);
+            }
+
+            100% {
+                transform: rotate(660deg);
+            }
+        }
+
+        .box:hover img:nth-child(6) {
+            transform: rotate(360deg);
+            animation: skin6 10s linear 2s infinite;
+        }
+
+        @keyframes skin6 {
+            0% {
+                transform: rotate(360deg);
+            }
+
+            20% {
+                transform: rotate(420deg);
+            }
+
+            40% {
+                transform: rotate(480deg);
+            }
+
+            60% {
+                transform: rotate(540deg);
+            }
+
+            80% {
+                transform: rotate(600deg);
+            }
+
+            90% {
+                transform: rotate(660deg);
+            }
+
+            100% {
+                transform: rotate(720deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img src="./images/6.jpg" alt="">
+        <img src="./images/5.jpg" alt="">
+        <img src="./images/4.jpg" alt="">
+        <img src="./images/3.jpg" alt="">
+        <img src="./images/2.jpg" alt="">
+        <img src="./images/1.jpg" alt="">
+    </div>
+</body>
+
+</html>

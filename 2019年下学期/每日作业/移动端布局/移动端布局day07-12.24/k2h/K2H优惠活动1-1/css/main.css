@@ -1,0 +1,116 @@
+/* 公共 */
+.commonality {
+  width: 592px;
+  height: 224px;
+  background-color: #dedede;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height:100%;
+  background-color: #f7f4f1;
+}
+
+header {
+  position: relative;
+  width: 100%;
+  /*  */
+  height: calc(88rem / 64);
+  background-color: #ff9b25;
+}
+
+header i {
+  position: absolute;
+  top: calc(28rem / 64);
+  left: calc(20rem / 64);
+  width: calc(20rem / 64);
+  height: calc(32rem / 64);
+  background-image: url(../image/back_icon.png);
+  background-size: calc(20rem / 64) calc(32rem / 64);
+}
+
+header span {
+  font-size: calc(32rem / 64);
+  line-height: calc(88rem / 64);
+  margin-left: calc(56rem / 64);
+  color: #fff;
+}
+
+.box {
+  font-size: calc(28rem / 64);
+  width: 100%;
+  /* height: calc(224rem/64); */
+  padding: 0 calc(24rem/64);
+  box-sizing: border-box;
+}
+
+.discounts {
+  line-height: calc(88rem/64);
+}
+
+.discounts a {
+  float: right;
+  color: #888888;
+}
+
+main .add {
+  position: relative;
+  width: 100%;
+  height: calc(224rem/64);
+  background-color: #ffffff;
+  border: calc(3rem/64) dashed #dedede;
+}
+
+main .raider {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: calc(-50rem/64);
+  margin-top: calc(-80rem/64);
+  width: calc(100rem/64);
+  height: calc(100rem/64);
+  border-radius: 50%;
+  border: 2px solid #aeaeae;
+  box-sizing: border-box;
+}
+
+main .raider::after {
+  content: "";
+  position: absolute;
+  top: calc(5rem/64);
+  left: 50%;
+  width: calc(3rem/64);
+  height: calc(80rem/64);
+  background-color: #aeaeae;
+}
+
+main .raider::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: calc(5rem/64);
+  width: calc(80rem/64);
+  height: calc(3rem/64);
+  background-color: #aeaeae;
+}
+
+.add span {
+  position: absolute;
+  bottom: 20%;
+  left: 42%;
+  /* margin-left: ; */
+  font-size: calc(26rem/64);
+  color: #aeaeae;
+}
+
+footer {
+  width: 100%;
+  height: calc(103rem/64);
+  font-size: calc(24rem/64);
+  line-height: calc(40rem/64);
+  color: #999999;
+  box-sizing: border-box;
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+  <div class="app">
+    <!--搜索框-->
+    <div class="nav">
+      <div class="navL fl">
+        <img src="./img/icon_search.png" alt="">
+        <input type="text" placeholder="输入您想找的商品" class="record_input">
+      </div>
+      <button class="record_btn fl">搜索</button>
+    </div>
+    <div class="hot_history">
+      <!--搜索历史-->
+      <div class="history">
+        <p class="history_tit">搜索历史</p>
+        <ul class="history_list">
+          <!--搜索历史循环列表-->
+          <!-- <li>全部搜索记录 <img src="./img/del.png" alt=""></li> -->
+        </ul>
+      </div>
+    </div>
+    <!--  清空 -->
+
+    <div class="close_whole">清空记录</div>
+  </div>
+  <script src="../../../../lib/jquery-3.4.1.min.js"></script>
+  <script>
+    // 将用户搜索商品的记录保存在本地， 形成历史搜索记录
+    //  如果本地有历史搜索记录就显示， 如果没有则隐藏
+    //  在input中输入内容， 点击按钮进行搜索， 要同时在本地保存历史搜索记录
+
+    // 先上来获取本地存储的数据，看是否有，有了就需要渲染，
+    var searchRecord = JSON.parse(localStorage.getItem('searchRecord') || "[]")
+
+    // 先渲染一下
+    render()
+
+    // 封装渲染的函数
+    function render() {
+      // 先上来清空
+      $('.history_list').html("")
+      //然后判断数据是否为空
+      if (searchRecord.length) {
+        // 搜索记录显示
+        $('.history,.close_whole').css('display', "block")
+        // 遍历数组创建li
+        searchRecord.forEach(function (item, i) {
+          // 创建li元素添加到history_list
+          $('.history_list').append(
+            `<li data-index=${i}>${item.keyword}<img src="./img/del.png" class="del" alt=""></li>`)
+
+        })
+      }
+
+    }
+
+    // 点击搜索
+    $('.record_btn').on('click', function () {
+      // 获取表单的值
+      var $val = $('.record_input').val().trim()
+      if ($val.length == 0) {
+        alert("请输入搜索内容,内容不能为空")
+      } else {
+        // 将数据添加到数组
+        searchRecord.push({ keyword: $val })
+        // 将数据保存在本地存储中
+        localStorage.setItem('searchRecord', JSON.stringify(searchRecord))
+        // 再次进行渲染
+        render()
+      }
+      // 之后清空表单
+      $('.record_input').val("")
+
+    })
+
+    // 点击清空记录
+    $('.close_whole').on('click', function () {
+      // 将本地存储清空
+      localStorage.clear()
+      // 直接将history_list清空
+      $('.history_list').html("")
+      // 历史记录和下面的清除记录记录都要隐藏
+      $('.history,.close_whole').css('display', "none")
+    })
+
+    // 点击每一项后面的删除每一项
+    $('.history').on('click', '.del', function () {
+      // 获取索引
+      var index = $(this).parent().data("index");
+      // 之后将数据从数组里面删除一条
+      searchRecord.splice(index, 1)
+      // 然后重置本地存储
+      localStorage.setItem('searchRecord', JSON.stringify(searchRecord))
+      // 重新渲染
+      render(searchRecord)
+      // 如果searchRecord里面的数据如果为空的话，隐藏历史记录和清空历史记录
+      if (!searchRecord.length) {
+        // 历史记录和下面的清除记录记录都要隐藏
+        $('.history,.close_whole').css('display', "none")
+      }
+
+    })
+  </script>
+</body>
+
+</html>

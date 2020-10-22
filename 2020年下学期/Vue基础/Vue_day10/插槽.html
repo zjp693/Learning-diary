@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <toubu>
+            <template>
+                三
+            </template>
+            <template>
+                <input type="text">
+            </template>
+            <template>
+                <button>登陆</button>
+            </template>
+            <template>
+                <button>我是匿名插槽</button>
+            </template>
+        </toubu>
+    </div>
+
+
+    <script src="../lib/Vue3.0.js"></script>
+    <script>
+        var vm = Vue.createApp({})
+
+        vm.component('toubu')
+
+
+
+
+        vm.mount('#app')
+
+    </script>
+</body>
+
+</html>

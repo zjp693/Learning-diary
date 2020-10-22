@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body,
+        html {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+
+            width: 100%;
+            height: 100%;
+            /* background-color: pink; */
+
+        }
+
+        .left li {
+            position: relative;
+            /* padding: 2px 0; */
+            width: 24px;
+            height: 22px;
+            box-sizing: border-box;
+            font-size: 10px;
+            text-align: center;
+            line-height: 22px;
+            color: #ffffff;
+            list-style: none;
+        }
+
+        .left li a {
+            display: inline-block;
+        }
+
+        .left li:nth-child(1) {
+            background: url(./img/spirte.png) no-repeat -9px -7px;
+        }
+
+        .left li a {
+            display: none;
+        }
+
+        .left li:hover:nth-child(1) {
+            background-color: seagreen;
+        }
+
+        .left li:hover:nth-child(1) a {
+            position: absolute;
+            top: 0;
+            left: 20px;
+            display: block;
+            width: 60px;
+            height: 22px;
+            background-color: seagreen;
+
+        }
+
+        .left li:nth-child(2) {
+            background: url(./img/spirte.png) no-repeat -9px -46px;
+        }
+
+        .left li:hover:nth-child(2) {
+            background-color: pink;
+        }
+
+        .left li:hover:nth-child(2) a {
+            position: absolute;
+            top: 0;
+            left: 20px;
+            display: block;
+            width: 60px;
+            height: 22px;
+            background-color: pink;
+
+        }
+
+        .left li:nth-child(3) {
+            background: url(./img/spirte.png) no-repeat -9px -86px;
+        }
+
+        .left li:hover:nth-child(3) {
+            background-color: pink;
+        }
+
+        .left li:hover:nth-child(3) a {
+            position: absolute;
+            top: 0;
+            left: 20px;
+            display: block;
+            width: 60px;
+            height: 22px;
+            background-color: pink;
+            list-style: none;
+
+        }
+
+        .left li:nth-child(4) {
+            background: url(./img/spirte.png) no-repeat -9px -126px;
+        }
+
+        .left li:hover:nth-child(4) {
+            background-color: pink;
+        }
+
+        .left li:hover:nth-child(4) a {
+            position: absolute;
+            top: 0;
+            left: 20px;
+            display: block;
+            width: 60px;
+            height: 22px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="left">
+            <ul>
+                <li><a>猜你喜欢</a></li>
+                <li><a>猜你喜欢</a></li>
+                <li><a>猜你喜欢</a></li>
+                <li><a>猜你喜欢</a></li>
+            </ul>
+        </div>
+        <div class="right"></div>
+    </div>
+</body>
+
+</html>

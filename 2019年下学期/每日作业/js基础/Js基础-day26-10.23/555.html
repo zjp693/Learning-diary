@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//         let studentArr = [
+//    {sId:0,name:'姓名',age:'年龄',score:'成绩'},
+//    {sId:1,name:'广东靓仔',age:18,score:80},
+//    {sId:2,name:'兰州拉面',age:19,score:80},
+//    {sId:3,name:'黄焖福建人',age:18,score:80},
+//    {sId:4,name:'兵哥哥',age:23,score:80},
+//    {sId:5,name:'东北哥们',age:19,score:80},
+//    {sId:6,name:'大屁股',age:20,score:80}
+//   ]
+  let studentArr = [
+            { sId: 1, name: '张三', age: 18, score: 80 },
+            { sId: 2, name: '李四', age: 19, score: 81 },
+            { sId: 3, name: '王五', age: 20, score: 82 },
+            { sId: 4, name: '赵四', age: 21, score: 83 },
+            { sId: 5, name: '周可', age: 22, score: 84 },
+            { sId: 6, name: '郭六', age: 23, score: 85 }
+        ]
+        let index = prompt('1：增加用户； 2：删除用户； 3：修改用户； 4：查找用户')
+        if (index == 1) {
+            let name = prompt('请您输入用户名')
+            let isHave = false
+            function addStudent(id, name, age, score) {
+                let student1 = new Object();
+                student1.sId = id;
+                student1.name = name;
+                student1.age = age;
+                student1.score = score;
+                studentArr.push(student1)
+            }
+            for (let i = 0; i < studentArr.length; i++) {
+                if (studentArr[i]['name'] == name) {
+                    isHave = true
+                }
+            }
+            if (isHave == false) {
+                let getId = prompt('请继续输入用户学生号');
+                let getage = prompt('请继续输入用户年龄');
+                let getscore = prompt('请继续输入用户成绩');
+                addStudent(getId, name, getage, getscore);
+            }
+            while (isHave === true) {
+                alert('该用户已经存在，需要再次重新输入名字')
+                let name = prompt('请您输入用户名')
+                let isHave = false;
+                for (let i = 0; i < studentArr.length; i++) {
+                    if (studentArr[i]['name'] == name) {
+                        isHave = true
+                    }
+                }
+                if (isHave == false) {
+                    let getId = prompt('请继续输入用户学生号');
+                    let getage = prompt('请继续输入用户年龄'); let getscore = prompt('请继续输入用户成绩');
+                    addStudent(getId, name, getage, getscore);
+                    break;
+                }
+            }
+            alert('用户添加成功')
+            let str = ''
+            for (let j = 1; j < studentArr.length; j++) {
+                str += studentArr[j].name + ' ' + studentArr[j].sId + ' ' + studentArr[j].age + ' ' + studentArr[j].score + '\n'
+            }
+            alert(`${str}`)
+        }
+        else if (index == 2) {
+            let name = prompt('请您输入要删除的用户名')
+            let isHave = false;
+            for (let i = 0; i < studentArr.length; i++) {
+                if (studentArr[i]['name'] == name) {
+                    isHave = true;
+                }
+            }
+            if (isHave == true) {
+                for (let i = 0; i < studentArr.length; i++) {
+                    if (studentArr[i].name == name) {
+                        studentArr.splice(i, 1)
+                    }
+                }
+            }
+            while (isHave == false) {
+                alert('您输入的用户不存在')
+                let name = prompt('请您重新输入用户名')
+                let isHave = false;
+                for (let i = 0; i < studentArr.length; i++) {
+                    if (studentArr[i]['name'] == name) {
+                        isHave = true;
+                    }
+                }
+                if (isHave == true) {
+                    for (let i = 0; i < studentArr.length; i++) {
+                        if (studentArr[i].name == name) {
+                            studentArr.splice(i, 1)
+                        }
+                    }
+                    break;
+                }
+            }
+            let str = ''
+            for (let j = 1; j < studentArr.length; j++) {
+                str += studentArr[j].name + ' ' + studentArr[j].sId + ' ' + studentArr[j].age + ' ' + studentArr[j].score + '\n'
+            }
+            alert(`${str}`)
+        }
+        else if (index == 3) {
+            let name = prompt('请您输入要修改的用户名')
+            let isHave = false;
+            for (let i = 0; i < studentArr.length; i++) {
+                if (studentArr[i]['name'] == name) {
+                    isHave = true;
+                }
+            }
+            if (isHave == true) {
+                for (let i = 0; i < studentArr.length; i++) {
+                    if (studentArr[i].name == name) {
+                        let remove = prompt('请选择您要修改的属性编号：1.学生号 2.名字 3.年龄 4.成绩')
+                        if (remove == 1) {
+                            let removeId = prompt('请输入您要修改为的值');
+                            studentArr[i].sId = removeId;
+                        }
+                        else if (remove == 2) {
+                            let removename = prompt('请输入您要修改为的值');
+                            studentArr[i].name = removename;
+                        }
+                        else if (remove == 3) {
+                            let removeage = prompt('请输入您要修改为的值');
+                            studentArr[i].age = removeage;
+                        }
+                        else if (remove == 4) {
+                            let removescore = prompt('请输入您要修改为的值');
+                            studentArr[i].score = removescore;
+                        }
+                    }
+                }
+            }
+            while (isHave == false) {
+                alert('您输入的用户不存在')
+                let name = prompt('请您重新输入用户名')
+                let isHave = false;
+                for (let i = 0; i < studentArr.length; i++) {
+                    if (studentArr[i]['name'] == name) {
+                        isHave = true;
+                    }
+                }
+                if (isHave == true) {
+                    for (let i = 0; i < studentArr.length; i++) {
+                        if (studentArr[i].name == name) {
+                            let remove = prompt('请选择您要修改的属性编号：1.学生号 2.名字 3.年龄 4.成绩')
+                            if (remove == 1) {
+                                let removeId = prompt('请输入您要修改为的值');
+                                studentArr[i].sId = removeId;
+                            }
+                            else if (remove == 2) {
+                                let removename = prompt('请输入您要修改为的值');
+                                studentArr[i].name = removename;
+                            }
+                            else if (remove == 3) {
+                                let removeage = prompt('请输入您要修改为的值');
+                                studentArr[i].age = removeage;
+                            }
+                            else if (remove == 4) {
+                                let removescore = prompt('请输入您要修改为的值');
+                                studentArr[i].score = removescore;
+                            }
+                        }
+                    }
+                    break;
+                }
+            }
+            let str = ''
+            for (let j = 1; j < studentArr.length; j++) {
+                str += studentArr[j].name + ' ' + studentArr[j].sId + ' ' + studentArr[j].age + ' ' + studentArr[j].score + '\n'
+            }
+            alert(`${str}`)
+        }
+        else if (index == 4) {
+            let name = prompt('请输入您要查看的用户名');
+            let isHave = false;
+            for (let i = 0; i < studentArr.length; i++) {
+                if (name == studentArr[i].name) {
+                    isHave = true;
+                }
+            }
+            if (isHave == true) {
+                alert('有')
+            }
+            else {
+                alert('没有')
+            }
+        }
+
+    
+    
+    
+    </script>
+    
+</body>
+</html>

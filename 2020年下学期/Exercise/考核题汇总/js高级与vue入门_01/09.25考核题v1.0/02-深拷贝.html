@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 深拷贝拷贝多层, 每一级别的数据都会拷贝.
+        var obj = {
+            id: 1,
+      
+            name: 'andy',
+            msg: {
+                age: 18
+            },
+            color: ['pink', 'red']
+        };
+
+        var o = {};
+
+        // 定义深拷贝函数
+        function deepCopy(newObj, oldObj) {
+            for (var k in oldObj) {
+                // 值
+                var item = oldObj[k];
+
+                // 1.看看是不是数组
+                // console.log(k + "=" + Array.isArray(item))
+                if (Array.isArray(item)) {
+                    // console.log(item);
+                    // 把旧数组中的值赋值给新数组
+                    newObj[k] = [];
+                    deepCopy(newObj[k], item)
+                } else if (item instanceof Object) { // 2.看看是不是对象
+                    newObj[k] = {};
+                    deepCopy(newObj[k], item)
+                }
+                else {
+                    // 3.不是数组不是对象 就是基本类似的属性
+                    newObj[k] = item;
+                }
+            }
+
+        }
+        deepCopy(o, obj);
+        o.msg.age = 20;
+        console.log(obj)
+
+        // console.log(deepCopy(o, obj))
+        // console.log(o)
+
+
+        var obj = {
+            id: 1,
+            yan: '我可以守住你的所有，但是守不住你的心',
+            msg: {
+                sum: '这是计划中的一部分'
+            },
+            color: ['都是鱼肉，只是砧板不同', ['丑陋的中国人']]
+        }
+
+        var o = {}
+
+        function deepCopy(newObj, oldObj) {
+            for (var k in oldObj) {
+                var item = oldObj[k];
+                //判断是否为数组
+                if (Array.isArray(item)) {
+                    newObj = []
+                } else if (item instanceof Object) {
+
+                }
+                //简单数据类型
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

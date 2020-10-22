@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // call 和 apply的作用都是 改变this的指向
+        // call的参数是参数列表  apply的参数是数组 
+
+        // 语法: 函数.apply(要指向的对象,[参数1,参数2]);
+        //       函数.call(要指向的对象,参数1,参数2)
+
+        // function fn(name, age) {
+        //     console.log(`我的名字叫${name},我今年${age}岁了`);
+        // }
+
+
+        // fn.apply(null, ["zhagnsan", 18]);
+
+        fn.call(null, "zhangsan", 28);
+
+
+    </script>
+</body>
+
+</html>

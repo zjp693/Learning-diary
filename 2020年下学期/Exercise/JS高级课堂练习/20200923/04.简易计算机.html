@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <div id="app">
+        <h2>简易的加法计算</h2>
+        <div>数值一：<input type="number" v-model='a'></div>
+        <div>数值二：<input type="number" v-model='b'></div>
+        <button @click="sum">计算</button>
+        <div> 结果 ：<input type="text" :value='c'></div>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        var vm = Vue.createApp({
+            data() {
+                return {
+                    a: '',
+                    b: '',
+                    c: null
+                }
+            },
+            methods: {
+                //计算结果
+                sum() {
+
+                    console.log(parseInt(this.a));
+                    this.c = parseInt(this.a) + parseInt(this.b)
+                    console.log(this.c);
+                }
+            }
+        }).mount("#app")
+
+    </script>
+</body>
+
+</html>

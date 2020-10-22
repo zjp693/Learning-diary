@@ -1,0 +1,28 @@
+// .box{
+//     color: red($color: #000000);
+//     a{
+//         text-align: center;
+//     }
+// }
+
+article {
+    ~article {
+        border-top: 1px solid #000;
+    }
+
+    >footer {
+        background-color: red;
+    }
+
+    dl>dt {
+        color: #333333;
+    }
+
+    dl>dd {
+        color: #999999;
+    }
+
+    nav+& {
+        margin-top: 0;
+    }
+}

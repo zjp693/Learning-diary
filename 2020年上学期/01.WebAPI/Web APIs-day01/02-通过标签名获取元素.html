@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <ul>
+    <li>Hello,小羊肖恩</li>
+    <li class="dier">Hello,小羊肖恩</li>
+    <li>Hello,小羊肖恩</li>
+    <li>Hello,小羊肖恩</li>
+    <li>Hello,小羊肖恩</li>
+  </ul>
+
+  <ol id="ol">
+    <li>我的小羊在睡觉</li>
+    <li>我的小羊在睡觉</li>
+    <li>我的小羊在睡觉</li>
+    <li>我的小羊在睡觉</li>
+    <li>我的小羊在睡觉</li>
+  </ol>
+
+  <script>
+    // let dier = document.getElementsByClassName('dier')[0];
+    // console.log(dier);
+
+
+    // 方法: document.getElementsByTagName();
+    // 作用: 通过标签名获取元素
+    // 参数: 标签的名字
+    // 返回值: 是元素对象集合(伪数组)
+
+    // let aUl = document.getElementsByTagName('ul');
+    // console.log(aUl);
+    // console.log(aUl[0])
+    // console.dir(aUl[0]);
+
+    // a: array 数组的意思 
+    // o: object 对象的意思
+    // let aLi = document.getElementsByTagName('li');
+    // console.log(aLi);
+
+
+    // 需求: 我只要下面ol中的五个li
+    // node.getElementsByTagName();
+    // node是一个节点
+    // 1.先要获取ol
+    // let ol = document.getElementById('ol');
+    // // 2.再在ol找又没有li
+    // let secondLi = ol.getElementsByTagName('li');
+    // console.log(secondLi);
+
+
+    // 能不能只用getElementsByTagName()来做
+    // var ol = document.ElementsByTagName('ol');
+    // var li = ol[o].document.ElementsByTagName('li');
+
+    // var li = document.getElementsByTagName('ol')[0].getElementsByTagName('li');
+    // console.log(li)
+
+
+
+    var arr = document.getElementsByClassName('dier')[0];
+    console.log(arr);
+    var arr = document.getElementsByClassName('dier')[0];
+    console.log(arr);
+    var arr = document.getElementsByClassName('dier')[0];
+    console.log(arr);
+
+    var aLi = document.getElementsByTagName('li');
+    console.log(aLi);
+    var aLi = document.getElementsByTagName('li');
+    console.log(aLi);
+    var aLi = document.getElementsByTagName('li');
+    console.log(aLi);
+
+    var ol = document.getElementById('ol');
+    var secondLi = ol.getElementsByTagName('li');
+    console.log(secondLi);
+    var ol = document.getElementById('ol');
+    var secondLi = ol.getElementsByTagName('li');
+    console.log(secondLi);
+    var ol = document.getElementById('ol');
+    var secondLi = ol.getElementsByTagName('li');
+    console.log(secondLi);
+
+    var li = document.getElementsByTagName('ol')[0].getElementsByTagName('li');
+    console.log(li)
+    var li = document.getElementsByTagName('ol')[0].getElementsByTagName('li');
+    console.log(li)
+    var li = document.getElementsByTagName('ol')[0].getElementsByTagName('li');
+    console.log(li)
+  </script>
+</body>
+
+</html>

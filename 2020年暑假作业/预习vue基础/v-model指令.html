@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <button @click='setm'>修改文本框的值</button>
+        <input type="text" v-model='message' @keyup.enter='getm'>
+        <h1>{{message}}</h1>
+    </div>
+
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+        let vm = new Vue({
+            el: '#app',
+            data: {
+                message: "擦拭付款就222"
+            },
+            methods: {
+                getm: function () {
+                    alert(this.message)
+                },
+                setm: function () {
+                    this.message = '看是被我修改了吧'
+                }
+            }
+        })
+    </script>
+
+</body>
+
+</html>

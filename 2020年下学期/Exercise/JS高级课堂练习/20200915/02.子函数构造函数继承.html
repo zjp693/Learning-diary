@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Father(name, age) {
+            this.name = name
+            this.age = age
+        }
+        Father.prototype.face = function () {
+            console.log('皇上，臣妾终于等到你了');
+        }
+
+
+        function Son(name, age, score = 5) {
+            Father.call(this.name, age)
+            this.score = score
+        }
+
+        son.prototype = new Father()
+        Son.prototype.study = function () {
+            console.log('看朕的后宫佳丽三千');
+        }
+
+        let zs = new Son('张三', 18)
+        console.log(zs);
+
+        zs.face()
+        console.log(Father.prototype);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        function Son(name, age) {
+            console.log(this);
+            Father.call(this, name, age);
+        }
+
+        let zs = new Son('张三', 18)    
+    </script>
+</body>
+
+</html>

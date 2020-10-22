@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="dv">
+    <ul class="list first-ul">
+      <li>我是1号</li>
+      <li>我是2号</li>
+      <li>我是3号</li>
+      <li>我是4号</li>
+    </ul>
+
+    <ul class="list">
+      <li>我是5号</li>
+      <li>我是6号</li>
+      <li>我是7号</li>
+      <li>我是8号</li>
+    </ul>
+    <p>
+      我的小羊在睡觉
+    </p>
+  </div>
+
+  <script>
+    // 需求1: 获取 id为dv的元素 打印出来
+    // 需求2: 获取class为list的元素 打印出来
+    // 需求3: 获取class为list的第一个li
+    // 需求4: 获取p标签
+
+
+    // 方法: document.querySelector('css选择器')
+    // 参数: 符合css选择器的 (#id名  .class名  标签名)
+    // 返回值: 元素对象
+    // 兼容性: 不能用在低版本浏览器中
+    // 注意点: 如果符合css选择器规则的元素有多个 只获取第一个
+
+    // let oDv = document.querySelector('#dv');
+    // console.log(oDv);
+
+    // let oList = document.querySelector('.list');
+    // console.log(oList);
+
+
+    // let firstLi = document.querySelector('.list li:first-child');
+    // console.log(firstLi);
+
+
+    // let oP = document.querySelector('p');
+    // console.log(oP);
+
+    // 只能得到符合选择器规则的第一个元素
+    // let li = document.querySelector('li');
+    // console.log(li);
+    // ==================================================================================================
+
+    // 如果你想要获取多个 还想用querySelector 你可以选择querySelectorAll
+    // 方法: document.querySelectorAll(); // 选择器到符合css选择器规则的所有元素
+    // 参数: 符合css选择器的 (#id名  .class名  标签名)
+    // 返回值: 元素对象集合(伪数组)
+    // 兼容性: 低版本浏览器中不行
+
+
+    // 需求1: 获取class为list的ul
+    // let aUl = document.querySelectorAll('.list');
+    // console.log(aUl);
+
+    // 需求: 获取class为first-ul中的第偶数个li
+    // 偶数 even 奇数odd
+    // let evenLi = document.querySelectorAll('.first-ul li:nth-child(even)');
+    // console.log(evenLi);
+
+
+
+
+
+    var oDv = document.querySelector('#dv');
+    console.log(oDv);
+    var oDv = document.querySelector('#dv');
+    console.log(oDv);
+    var oDv = document.querySelector('#dv');
+    console.log(oDv);
+
+    var oList = document.querySelector('.list');
+    console.log(oList);
+    var oList = document.querySelector('.list');
+    console.log(oList);
+    var oList = document.querySelector('.list');
+    console.log(oList);
+
+
+
+    var firstLi = document.querySelector('.list li:first-child');
+    console.log(firstLi);
+    var firstLi = document.querySelector('.list li:first-child');
+    console.log(firstLi);
+    var firstLi = document.querySelector('.list li:first-child');
+    console.log(firstLi);
+
+
+    var oP = document.querySelector('p');
+    console.log(oP);
+    var oP = document.querySelector('p');
+    console.log(oP);
+    var oP = document.querySelector('p');
+    console.log(oP);
+
+
+    // 需求1: 获取class为list的ul
+    var aUl = document.querySelectorAll('.list');
+    console.log(aUl);
+    var aUl = document.querySelectorAll('.list');
+    console.log(aUl);
+    var aUl = document.querySelectorAll('.list');
+    console.log(aUl);
+
+
+    // 需求: 获取class为first-ul中的第偶数个li
+    // 偶数 even 奇数odd
+    var evenLi = document.querySelectorAll('.first-ul li:nth-child(even)');
+    console.log(evenLi);
+    var evenLi = document.querySelectorAll('.first-ul li:nth-child(even)');
+    console.log(evenLi);
+    var evenLi = document.querySelectorAll('.first-ul li:nth-child(even)');
+    console.log(evenLi);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE h tml>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var arr = [1, 2, 3, 4]
+        // Array.prototype.getSun = function () {
+        //     let suma = 0
+        //     for (var i = 0; i < this.length; i++) {
+        //         suma += this[i]
+
+        //     }
+        //     return suma
+        // }
+
+        // console.log(arr.getSun);
+
+        // console.log(arr);
+
+
+        function bSort(arr) {
+            var len = arr.length;
+            for (var i = 0; i < len - 1; i++) {
+                for (var j = 0; j < len - 1 - i; j++) {
+                    // 相邻元素两两对比，元素交换，大的元素交换到后面
+                    if (arr[j] > arr[j + 1]) {
+                        var temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
+            }
+            return arr;
+        }
+
+        //举个数组
+        let myArr = [20, 18, 27, 19, 35];
+        //使用函数
+        // console.log(arr);
+        console.log(bSort(myArr))
+    </script>
+</body>
+
+</html>

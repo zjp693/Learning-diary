@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+    <!-- 2.写样式 -->
+    <style>
+      html,body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+</head>
+
+<body>
+  <!-- 需求: 在本文件中 有两个按钮 一个叫开灯 一个叫关灯  当点击开灯的时候 浏览器的背景是白色的 当点击关灯的时候 浏览器的背景是黑色的 -->
+
+  <!-- 1.写html -->
+  <button class="open">开灯</button>
+  <button class="close">关灯</button>
+
+  <!-- 3.写js -->
+  <script>
+    // 步骤:
+
+    // 1.获取元素(open close body)
+    let openBtn = document.querySelector('.open');
+    console.log(openBtn);
+    let closeBtn = document.querySelector('.close');
+    let bodyEle = document.body;
+    // 2.给开灯添加事件
+    openBtn.onclick = function () {
+      // 2.1 让body的背景色变成白色
+      bodyEle.style.backgroundColor = '#fff';
+    }
+   
+
+    // 3.给关灯添加事件
+    // closeBtn.onclick = function () {
+    //     // 3.1 让body的背景色变成黑色
+    //     bodyEle.style.backgroundColor = "#000";
+    // }
+
+
+    
+
+    // closeBtn.onclick = function () {
+    //     // 3.1 让body的背景色变成黑色
+    //     this.style.backgroundColor = "#000";
+    // }
+    
+
+  </script>
+</body>
+</html>

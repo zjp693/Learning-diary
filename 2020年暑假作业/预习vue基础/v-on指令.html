@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <input type="button" value="v-on指令" v-on:click="btn">
+        <input type="button" value="v-on指令简写" @click='btn'>
+        <input type="button" value="双击事件" @dblclick='btn1'>
+        <h3 @click='hhh'>{{msg}}</h3>
+    </div>
+
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                msg: '点我，我就:'
+            },
+
+            methods: {
+                btn: function () {
+                    alert('皇上你终于翻我牌子了')
+                },
+                btn1: function () {
+                    alert('双杀')
+                },
+                hhh: function () {
+                    this.msg += "msg"
+                }
+            }
+        })
+    </script>
+
+
+</body>
+
+</html>

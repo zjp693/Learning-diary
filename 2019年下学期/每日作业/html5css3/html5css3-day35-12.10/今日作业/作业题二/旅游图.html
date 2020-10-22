@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            padding: 10px 15px 10px 10px;
+        }
+
+
+        .img {
+            margin-right: 10px;
+            float: left;
+            width: 270px;
+            height: 160px;
+            overflow: hidden;
+        }
+
+        .img img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .img:hover .content {
+            transition: all 0.5s;
+            transform: translate(0px, -40px);
+
+        }
+
+        .img:hover img {
+            transition: all 0.5s;
+            transform: scale(1.1)
+        }
+
+        .content {
+            text-align: center;
+            transform: translate(0px, -23px);
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        .content h3 {
+            font-size: 14px;
+            color: #ffffff;
+        }
+
+        .content p {
+            font-size: 14px;
+            color: #a4adaf;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="img">
+        <img src="./images/2.jpg" alt="">
+        <div class="content">
+            <h3>嘉兴旅游体验馆</h1>
+                <p>红船起梦,心油嘉兴,江南水乡</p>
+        </div>
+    </div>
+    <div class="img">
+        <img src="./images/3.jpg" alt="">
+        <div class="content">
+            <h3>西班牙旅游体验馆</h1>
+                <p>活力之旅，善美韶关</p>
+        </div>
+    </div>
+    <div class="img">
+        <img src="./images/4.jpg" alt="">
+        <div class="content">
+            <h3>广州南沙邮轮体验馆</h1>
+                <p>活力之旅，善美韶关</p>
+        </div>
+    </div>
+    <div class="img">
+        <img src="./images/5.jpg" alt="">
+        <div class="content">
+            <h3>以色列国家旅游体验馆</h1>
+                <p>活力之旅，善美韶关</p>
+        </div>
+    </div>
+    </div>
+    </div>
+
+</body>
+
+</html>

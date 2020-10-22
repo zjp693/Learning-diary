@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 在这里我们讨论this的指向 只讨论浏览器中this的指向
+
+
+        // 1.单纯的函数中 this指向 Window对象
+
+        // function fn() {
+        //     console.log(this);
+        // }
+
+        // fn();
+
+        // 2.在对象中,如果this在对象的方法中 那么this指向该对象
+        // let obj = {
+        //     sayHi: function () {
+        //         console.log(this);
+        //     },
+
+        // }
+
+        // obj.sayHi();
+
+        // 3.在构造函数中 this指向的是创建出来(new)的新对象
+        // let Person = function (name) {
+        //     this.name = name
+        //     // console.log(this);
+        //     this.fn = function () {
+        //         console.log(this.name);
+        //     }
+        // }
+
+
+        // let zs = new Person("张三");
+        // // console.log(zs);
+        // zs.fn();
+        // console.log(zs.name);
+    </script>
+</body>
+
+</html>

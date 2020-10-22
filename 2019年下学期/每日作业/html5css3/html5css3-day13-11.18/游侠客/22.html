@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            /* position: absolute; */
+            margin: 15px auto;
+            width: 150px;
+            height: 150px;
+            background-color: pink;
+        }
+
+
+        .box>img {
+            width: 130x;
+            height: 130px;
+            padding: 10px;
+
+        }
+
+        .box:after {
+            content: '';
+            width: 0;
+            height: 0;
+            line-height: 0;
+            font-size: 0;
+            border: 8px solid transparent;
+            border-bottom: 8px solid red;
+            position: absolute;
+            left: 50%;
+            top: 0px;
+
+        }
+
+        /* {
+            width: 0;
+            height: 0;
+            line-height: 0;
+            font-size: 0;
+            border: 8px solid transparent;
+            border-bottom: 8px solid #000;
+
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="box">
+
+        <img src="./img/topnav-right-wx.png" alt="">
+
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <div>
+      <span>用户名：</span>
+      <span>
+        <input type="text" v-model.lazy='uname'>
+      </span>
+      <span>{{tip}}</span>
+    </div>
+  </div>
+  <script src="./vue3.0.global.js"></script>
+  <script>
+    var vm = Vue.createApp({
+      data() {
+        return {
+          tip: '',
+          uname: ''
+        }
+      },
+      methods: {
+        fu() {
+          setTimeout(() => {
+            if (this.uname == 'miss刘') {
+              this.tip = 'no'
+            } else {
+              this.tip = 'yes'
+            }
+          }, 300);
+        }
+      }
+      ,
+      watch: {
+        uname(val) {
+          this.tip = '验证中。。。。。',
+            this.fu(val)
+
+        }
+      }
+    }).mount('#app')
+  </script>
+</body>
+
+</html>

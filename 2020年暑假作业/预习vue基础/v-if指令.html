@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <p v-if='isif' @click='ifbuttn'>路见不平一声吼哇  该出手时就出手哇 </p>
+        <p v-if='age>=15' @click='itifbutton'>风风火火闯九州哇  （该出手时就出手哇）</p>
+        <p>（风风火火闯九州哇）  嘿依呀唉儿呀</p>
+    </div>
+
+
+
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        let app = new Vue({
+            el: "#app",
+            data: {
+                isif: true,
+                age: 15
+
+            },
+            methods: {
+                ifbutton: function () {
+                    this.isif = !this.isif
+                },
+                itifbutton: function () {
+
+                    alert('皇上你终于翻我牌子了')
+
+                }
+
+            }
+        })
+
+
+    </script>
+
+
+</body>
+
+</html>

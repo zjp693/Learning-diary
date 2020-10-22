@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 编写程序，用户录入任意的年份、月份、日期，
+
+        // 打印出该天是该年的第多少天。
+
+        // 如果输入的月份大于了12月或者日期大于了31日，则输出0天。
+
+
+        //用户录入 年份 , 月份 , 日期
+        var year = Number(prompt("请输入年份"));
+        var month = Number(prompt("请输入月份"));
+        var day = Number(prompt("请输入日期"));
+
+        //调用方法  传递参数
+        let today = getDay(year, month, day);
+
+        document.write("该天时该年的: " + today + " 天");
+
+
+
+        function getDay(year, month, day) {
+
+            //判断月份 是否大于 12 月  或者 日期大于 31 天
+            if (month > 12 || day > 31) {
+                return 0;
+            }
+
+            //判断月份 是否小于2月
+            if (month < 2) {
+                return day;
+            }
+
+            //定义数组  储存 每个月有多少天
+            let arr = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+            //定义 变量 sum  保存一共有多少天
+            let sum = 0;
+
+            //遍历数组  从 0 到 month-1 
+            for (let i = 0; i < month - 1; i++) {
+                sum += arr[i];
+            }
+
+
+            //判断是否为闰年
+            if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+                sum += day - 1;
+            } else {
+                sum += day;
+            }
+
+            //返回 sum
+            return sum;
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-model='msg'>
+        <p>{{msg}}</p>
+        <p>文本的长度为：{{msg.length}}</p>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        var vm = Vue.createApp({
+            data() {
+                return {
+
+                    msg: '千山鸟飞绝, 万径人踪灭。孤舟蓑笠翁, 独钓寒江雪。'
+
+                }
+            }
+        }).mount("#app")
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+article ~ article {
+  border-top: 1px solid #000;
+}
+
+article > footer {
+  background-color: red;
+}
+
+article dl > dt {
+  color: #333333;
+}
+
+article dl > dd {
+  color: #999999;
+}
+
+nav + article {
+  margin-top: 0;
+}
+/*# sourceMappingURL=mian.css.map */

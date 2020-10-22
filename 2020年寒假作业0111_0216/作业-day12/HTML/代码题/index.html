@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+            background: #cbcccb;
+        }
+
+        .box {
+            min-width: 320px;
+            max-width: 600px;
+            margin: 50px auto;
+            /* background-color: #fff; */
+        }
+
+        .box img {
+            width: 100%;
+            display: flex;
+        }
+
+        .box img {
+            flex: 1;
+        }
+
+        .box .item {
+            margin: 0 4px;
+            margin-top: 4px;
+            border-radius: 10px;
+        }
+
+        .box .item:nth-of-type(2) {
+            background-color: #ff7878;
+        }
+
+        .box .item:nth-of-type(3) {
+            background-color: #3495ff;
+        }
+
+        .box .item:nth-of-type(4) {
+            background-color: #3baf1e;
+        }
+
+        .box .item:nth-of-type(5) {
+            background-color: #ff9a1a;
+        }
+
+        .box .item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+        }
+
+        .box .item .sub {
+            flex: 1;
+        }
+
+        .box .sub+.pub {
+            flex: 2;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: center;
+        }
+
+        .box .item .pub {
+            color: #fff;
+        }
+
+        .box .pub .list {
+            flex: 1;
+            border-left: 1px solid #fde5e4;
+        }
+
+        .box .pub .liist-1 {
+            height: 40px;
+            line-height: 40px;
+        }
+
+        .box .pub .liist-1:nth-of-type(2) {
+            border-top: 1px solid #fff;
+        }
+
+        .box .sub span {
+            display: block;
+            padding-bottom: 4px;
+        }
+
+        .box .sub s {
+            display: block;
+            margin: auto;
+
+        }
+
+        .box .item:nth-of-type(2) s {
+            width: 80px;
+            height: 40px;
+            background: url(./img/sprite.png) no-repeat 18px -133px;
+            background-size: 110px;
+        }
+
+        .box .item:nth-of-type(3) s {
+            width: 80px;
+            height: 40px;
+            background: url(./img/sprite.png) no-repeat 18px -306px;
+            background-size: 110px;
+        }
+
+        .box .item:nth-of-type(4) s {
+            width: 80px;
+            height: 41px;
+            background: url(./img/sprite.png) no-repeat 20px -186px;
+            background-size: 110px;
+
+        }
+
+        .box .item:nth-of-type(5) {
+            margin-bottom: 4px;
+        }
+
+        .box .item:nth-of-type(5) .pub {
+            display: flex;
+            width: 100%;
+        }
+
+        .box .item:nth-of-type(5) .list {
+            flex: 1;
+        }
+
+        .box .item:nth-of-type(5) .list:nth-of-type(1) {
+            border-left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="img"><img src="./img/banner.jpg" alt=""></div>
+        <div class="item">
+            <div class="sub">
+                <span>酒店</span>
+                <s></s>
+            </div>
+            <div class="pub">
+                <div class="list">
+                    <div class="liist-1">海外酒店</div>
+                    <div class="liist-1">特价酒店</div>
+                </div>
+                <div class="list">
+                    <div class="liist-1">团购</div>
+                    <div class="liist-1">民宿·客栈</div>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="sub">
+                <span>酒店</span>
+                <s></s>
+            </div>
+            <div class="pub">
+                <div class="list">
+                    <div class="liist-1">海外酒店</div>
+                    <div class="liist-1">特价酒店</div>
+                </div>
+                <div class="list">
+                    <div class="liist-1">团购</div>
+                    <div class="liist-1">民宿·客栈</div>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="sub">
+                <span>酒店</span>
+                <s></s>
+            </div>
+            <div class="pub">
+                <div class="list">
+                    <div class="liist-1">海外酒店</div>
+                    <div class="liist-1">特价酒店</div>
+                </div>
+                <div class="list">
+                    <div class="liist-1">团购</div>
+                    <div class="liist-1">民宿·客栈</div>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="pub">
+                <div class="list">
+                    <div class="liist-1">团购</div>
+                    <div class="liist-1">民宿·客栈</div>
+                </div>
+                <div class="list">
+                    <div class="liist-1">海外酒店</div>
+                    <div class="liist-1">特价酒店</div>
+                </div>
+                <div class="list">
+                    <div class="liist-1">团购</div>
+                    <div class="liist-1">民宿·客栈</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

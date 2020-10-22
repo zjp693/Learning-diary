@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <button @click='dong'>动起来</button>
+        <button @click='ting'>停下</button>
+        <h3>{{msg}}</h3>
+    </div>
+
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        var vm = Vue.createApp({
+            data() {
+                return {
+                    msg: 'fjhsdfhsjkahj',
+                    interId: null
+                }
+            },
+            methods: {
+                // 动起来
+                dong() {
+                    if (this.interId != null) return
+                    this.interId = setInterval(() => {
+                        var start = this.msg.slice(0, 1);
+                        var end = this.msg.slice(1)
+                        this.msg = end + start
+                    }, 600)
+                },
+                //停下
+                ting() {
+                    clearInterval(this.interId)
+                }
+            }
+        }).mount('#app')
+    </script>
+</body>
+
+</html>

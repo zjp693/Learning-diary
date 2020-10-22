@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 120px;
+            height: 60px;
+            animation: myfirst 5s infinite;
+        }
+
+        div img {
+            width: 120px;
+            height: 60px;
+        }
+
+        @keyframes myfirst {
+            0% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(1000px);
+            }
+
+            50% {
+                transform: translateX(1000px) rotateY(180deg);
+            }
+
+
+            75% {
+                transform: translateX(0) rotateY(180deg);
+            }
+
+            100% {
+                transform: translateX(0) rotateY(0deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div><img src="./images/car.jpg" alt=""></div>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    img {
+      position: absolute;
+      top: 2px;
+      box-shadow: 0 0 1px #ccc;
+    }
+  </style>
+</head>
+
+<body>
+  <img src="images/angel.gif" alt="">
+  <script>
+    // 需求: 当鼠标移动的时候  图片跟随鼠标一起移动
+    // mousemove 鼠标移动事件 
+
+    // 步骤:
+    // 1.获取元素 img
+    let oImg = document.querySelector('img');
+    // 2.给document添加事件(鼠标在网页中移动 要不断的获取网页中鼠标的位置)
+    document.addEventListener('mousemove', function (e) {
+      // 3.通过鼠标事件对象 获取鼠标的位置
+      // console.log(e.pageX, e.pageY);
+      // 4.把鼠标的位置为图片(left(水平坐标) top(竖直坐标))
+      let left = e.pageX;
+      let top = e.pageY;
+
+      oImg.style.left = (left - 96) + 'px';
+      oImg.style.top = (top - 80) + 'px';
+    })
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+* {
+    box-sizing: border-box;
+}
+
+/* 图片三像素解决 */
+img {
+    display: block;
+}
+
+
+/* 清除浮动 */
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}

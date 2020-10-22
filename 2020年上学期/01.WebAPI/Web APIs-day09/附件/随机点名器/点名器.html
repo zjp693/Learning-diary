@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Document</title>
+
+    <style>
+        .box {
+
+            width: 200px;
+
+            height: 200px;
+
+            line-height: 200px;
+
+            background-color: #ccc;
+
+            font-size: 30px;
+
+            text-align: center;
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="box">此乃点名器</div>
+
+    <input type="button" value="点名" id="btn">
+
+    <!-- <button id="btn">点名</button> -->
+
+    <script>
+
+        var btn = document.getElementById("btn");
+
+        var box = document.getElementsByClassName("box")[0];
+
+        // 3、写一个随机抽名的案例？（点击按钮开启定时器，
+
+        // 定时器中去随机抽取人名，把全班的人放在一个数组中，只要想办法获取随机的索引号就可以）
+
+        btn.onclick = function () {
+
+            if (this.value === "点名") {
+
+                function fn() {
+
+                    var arr = ["张三", "李四", "王五", "赵六", "黑七", "白八", "紫九", "红薯"];
+
+                    var index = parseInt(Math.random() * arr.length);
+
+                    // var n1 = parseInt(Math.random() * 255 + 1);
+
+                    // var n2 = parseInt(Math.random() * 255 + 1);
+
+                    // var n3 = parseInt(Math.random() * 255 + 1);
+
+                    // box.style.background = "rgb(" + n1 + "," + n2 + "," + n3 + ")";
+
+                    box.innerHTML = arr[index];
+
+                }
+
+                this.value = "停止";
+
+                //定时器不加var声明，涉及到作用域问题   
+
+                timer = setInterval(fn, 2);
+
+            } else {
+
+                clearInterval(timer);
+
+                this.value = "点名";
+
+            }
+
+
+
+        }
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

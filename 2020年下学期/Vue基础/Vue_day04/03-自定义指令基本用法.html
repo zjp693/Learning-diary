@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <!-- 注意: vue中自定义指令必须是以v-开头 autofocus -->
+    <input type="text" v-autofocus>
+  </div>
+  <script src="../lib/Vue3.0.js"></script>
+  <script>
+    // vm是view model 其实也是vue实例 自定义指令在vm上挂载
+    let vm = Vue.createApp({});
+
+    // 自定义指令:
+    // 1.全局自定义指令
+    // vm.directive("指令名称", {
+    //   mounted(el) {
+    //     // 功能
+    //   }
+    // })
+
+    // 指令是当页面加载的时候 发生的
+    vm.directive("autofocus", {
+      // 
+      mounted(el) {
+        // el代表使用指令的那个元素
+        console.log(el);
+        // 让元素获取焦点
+        el.focus();
+        // 让input设置一个默认值
+        el.value = "你好阿斯顿发大水";
+        el.style.backgroundColor = "blue"
+      }
+    })
+
+    vm.mount('#app');
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,149 @@
+.top {
+    margin: auto;
+    width: 1150px;
+    height: 30px;
+    background-color: #fbfbfb;
+
+}
+
+.container {
+    font-size: 10px;
+    line-height: 30px;
+}
+
+.container a {
+    text-decoration: none;
+}
+
+.container a:nth-child(1) {
+    float: left;
+    margin-right: 14px;
+}
+
+.container span {
+    padding: 0 14px;
+}
+
+.container a:nth-child(14) {
+    padding-right: 7px;
+
+
+}
+
+.container a:nth-child(14) i {
+    display: inline-block;
+    width: 9px;
+    height: 12px;
+    background: url(../imges/图层12.png) no-repeat 0px 0px;
+    vertical-align: middle;
+}
+
+.container a:nth-child(15) {
+    padding-right: 7px;
+    text-decoration: none;
+}
+
+.container a:nth-child(15) i {
+    display: inline-block;
+    width: 11px;
+    height: 12px;
+    background: url(../imges/图层12.png) no-repeat -61px 0px;
+    vertical-align: middle;
+
+}
+
+.container a:nth-child(16) {
+    padding-right: 7px;
+}
+
+.container a:nth-child(16) i {
+    display: inline-block;
+    width: 11px;
+    height: 12px;
+    background: url(../imges/图层12.png) no-repeat -121px 0px;
+    vertical-align: middle;
+
+}
+
+.too {
+    margin: auto;
+    width: 1150px;
+    height: 500px;
+    background-image: url(../imges/图层227.png);
+    background-repeat: no-repeat;
+}
+
+.container img {
+    float: left;
+    height: 70px;
+}
+
+
+
+/* .search {
+    position: relative;
+    float: left;
+    width: 441px;
+    height: 65px;
+} */
+/* 
+.container ul {
+    margin-left: 60px;
+} */
+
+.container li,
+.container ul {
+    float: left;
+    list-style: none;
+
+}
+
+.container span {
+    padding: 0 4px;
+}
+
+.container input {
+    /* float: left; */
+    /* position: relative; */
+    float: left;
+    /* margin-top: -10px; */
+    margin-left: 40px;
+    width: 436px;
+    height: 20px;
+    box-sizing: border-box;
+    background-image: url(../imges/图层22.png);
+    background-repeat: no-repeat;
+   
+}
+.container small{
+   position: absolute;
+   top: 122px;
+   left: 478px;
+   display: inline-block;
+   width: 30px;
+   height: 16px;
+   line-height: 16px;
+
+   background-color: antiquewhite;
+}
+
+/* .search img {
+    position: absolute;
+    top: 48px;
+    left: 104px;
+    width: 24px;
+    height: 8px;
+    
+} */
+
+/* .containe .search {
+    text-align: left;
+} */
+
+.container button {
+    float: left;
+    width: 64px;
+    height: 20px;
+    background-color: #e56d00;
+    border: none;
+}

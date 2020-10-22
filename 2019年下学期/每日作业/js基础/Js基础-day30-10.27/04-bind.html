@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function fn(x, y) {
+            // console.log(this);
+            console.log(x + y + "=======" + this.name);
+            console.log(arguments.length);
+            console.log(arguments);
+        }
+
+        // var obj = {};
+        // console.log(obj.name);
+        // console.log(window);
+
+        fn(2, 3);
+        console.log("===========================================================")
+        // 改变this的指向
+        var obj = {
+            name: "zhangsan",
+            age: 18
+        }
+        // fn.call(obj, 2, 3);
+        var fn1 = fn.bind(obj, 2, 3);
+        // console.log(fn1);
+        fn1();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>留言板</title>
+  <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+  <h1>留言板</h1>
+  <div id="content">
+    <div id="post">
+      <div style="background:#3EADC5 ;height:30px;">
+        昵称：<input type="submit" id="shangtian" name="Submit3"
+          style="border:none; background-color:#3EADC5; color:white;" value="默认用户点击改变" />
+      </div>
+      <div>
+        <textarea class="transition"></textarea>
+      </div>
+      <input id="postBt" type="button"
+        style="border:none; background-color:#3EADC5; color:white;border-radius:5px; width:80px; height:30px;"
+        value="发表留言" />
+      <input id="clearBt" type="button"
+        style="border:none; background-color:#3EADC5; color:white;border-radius:5px; width:80px; height:30px;"
+        value="清空" />
+    </div>
+    <!-- 留言区 -->
+    <div id="comment">
+      <!-- 这是创建元素的模板 -->
+      <!-- <span>
+        匿名发言者
+        <span class="fr">2020-03-13 21:08:55</span>
+        <p>
+          <span class="msg">111<input  id="clear" type="button" value="删除"></span>
+        </p>
+      </span> -->
+    </div>
+  </div>
+  <script>
+    //  - 页面已经给定，只写功能即可，不要在给定的页面上面添加样式之类的，只写js效果
+
+    // - 点击左上角的“默认用户点击改变”，弹出一个输入框,标题是"请输入您的名字",
+    //   如果用户没有输入，点击了确定，之前的“默认用户点击改变”的文字被 “匿名发言者”替代
+    //   如果用户没有输入，点击了取消，之前的“默认用户点击改变”的文字也会被 “匿名发言者”替代
+    //   如果用户输入了内容，点击了取消，之前的“默认用户点击改变”的文字也会被 “匿名发言者”替代
+    //   如果用户输入了内容，点击了确定，页面中弹出"欢迎您：XXX",之前的“默认用户点击改变”的文字被“用户输入的名字”替代
+
+    // - 点击“发表留言”,如果文本域的内容为空，则提示“请填写您的留言!”,否则根据页面中给定的模板，创建一条留言，之后将留言添加到留言区域内,
+    //   注意1:最新发布的留言在留言区域内的最上面
+    //   注意2：时间是当前格式化之后的时间
+
+    // - 当点击“清空”按钮的时候，
+    //   如果留言区域内没有留言，则弹出“没有需要清空的数据”
+    //   如果留言区域内有留言，则弹出“清空后不可恢复，是否确认清空?”，当点击弹出框的“取消”的时候，就不清空下面的留言；如果点击弹出框的“确认”的时候，下面留言区域内就会被清空
+
+    // - 当点击每条留言上面的"删除"按钮，对应的这条数据就会被删除掉从留言区域中
+    let shangtian = document.querySelector('#shangtian') // 用户名
+    let postBt = document.querySelector('#postBt') //发表留言
+    let transition = document.querySelector('.transition') //文本域
+    let comment = document.querySelector('#comment')  //留言区
+    let clearBt = document.querySelector('#clearBt')  //清空按钮
+    // console.log(transition)
+    // //1
+    // var name = '匿名发言者'
+    // shangtian.addEventListener('click', function () {
+    //   name = prompt('请输入您的名字')
+    //   console.log(name)
+    //   if (name.trim().length == 0 || name == "null") {
+    //     this.value = "匿名发言者"
+    //     name = "匿名发言者"
+    //   } else {
+    //     alert(`欢迎您：${name}`)
+    //     this.value = name
+    //   }
+    // })
+    // postBt.onclick = function () {
+    //   // console.log(transition.value.trim().length)
+    //   if (transition.value.trim().length == 0) {
+    //     alert('请填写您的留言')
+    //   } else {
+    //     let span = document.createElement('span')
+    //     span.innerHTML = `
+    //        ${name}
+    //     <span class="fr">${getTimes()}</span>
+    //     <p>
+    //       <span class="msg">${transition.value}<input  id="clear" type="button" value="删除"></span>
+    //     </p>
+    //     `
+    //     comment.insertBefore(span, comment.children[0])
+    //     transition.value = ''
+
+    //   }
+    // }
+    // //清空
+    // clearBt.onclick = function () {
+    //   if (comment.children.length == 0) {
+    //     alert('没有需要清空的数据')
+    //   } else {
+    //     let isOk = confirm('清空后不可恢复，是否确认清空')
+    //     if (isOk) {
+    //       comment.innerHTML = ''
+    //     }
+    //   }
+    // }
+
+    // //删除
+    // comment.addEventListener('click', function (e) {
+    //   if (e.target.value == '删除') {
+    //     comment.remove(e.target.parentNode.parentNode.parentNode)
+    //   }
+    // })
+    // //时间
+    // function getTimes() {
+    //   let date = new Date()
+    //   let Y = date.getFullYear()
+    //   let M = date.getMonth() + 1
+    //   let D = date.getDate()
+    //   let h = date.getHours()
+    //   let m = date.getMinutes()
+    //   let s = date.getSeconds()
+    //   M = M < 10 ? '0' + M : M
+    //   D = D < 10 ? '0' + D : D
+    //   h = h < 10 ? '0' + h : h
+    //   m = m < 10 ? '0' + m : m
+    //   s = s < 10 ? '0' + s : s
+    //   return `${Y}-${M}-${D} ${h}:${m}:${s}`
+    // }
+    // getTimes()
+
+
+    // //2
+    // var name = '匿名发言者'
+    // shangtian.addEventListener('click', function () {
+    //   name = prompt('请输入您的名字')
+    //   console.log(name)
+    //   if (name.trim().length == 0 || name == "null") {
+    //     this.value = "匿名发言者"
+    //     name = "匿名发言者"
+    //   } else {
+    //     alert(`欢迎您：${name}`)
+    //     this.value = name
+    //   }
+    // })
+    // postBt.onclick = function () {
+    //   // console.log(transition.value.trim().length)
+    //   if (transition.value.trim().length == 0) {
+    //     alert('请填写您的留言')
+    //   } else {
+    //     let span = document.createElement('span')
+    //     span.innerHTML = `
+    //        ${name}
+    //     <span class="fr">${getTimes()}</span>
+    //     <p>
+    //       <span class="msg">${transition.value}<input  id="clear" type="button" value="删除"></span>
+    //     </p>
+    //     `
+    //     comment.insertBefore(span, comment.children[0])
+    //     transition.value = ''
+
+    //   }
+    // }
+    // //清空
+    // clearBt.onclick = function () {
+    //   if (comment.children.length == 0) {
+    //     alert('没有需要清空的数据')
+    //   } else {
+    //     let isOk = confirm('清空后不可恢复，是否确认清空')
+    //     if (isOk) {
+    //       comment.innerHTML = ''
+    //     }
+    //   }
+    // }
+
+    // //删除
+    // comment.addEventListener('click', function (e) {
+    //   if (e.target.value == '删除') {
+    //     comment.remove(e.target.parentNode.parentNode.parentNode)
+    //   }
+    // })
+    // //时间
+    // function getTimes() {
+    //   let date = new Date()
+    //   let Y = date.getFullYear()
+    //   let M = date.getMonth() + 1
+    //   let D = date.getDate()
+    //   let h = date.getHours()
+    //   let m = date.getMinutes()
+    //   let s = date.getSeconds()
+    //   M = M < 10 ? '0' + M : M
+    //   D = D < 10 ? '0' + D : D
+    //   h = h < 10 ? '0' + h : h
+    //   m = m < 10 ? '0' + m : m
+    //   s = s < 10 ? '0' + s : s
+    //   return `${Y}-${M}-${D} ${h}:${m}:${s}`
+    // }
+    // getTimes()
+
+
+
+
+
+    //3
+    var name = '匿名发言者'
+    shangtian.addEventListener('click', function () {
+      name = prompt('请输入您的名字')
+      console.log(name)
+      if (name.trim().length == 0 || name == "null") {
+        this.value = "匿名发言者"
+        name = "匿名发言者"
+      } else {
+        alert(`欢迎您：${name}`)
+        this.value = name
+      }
+    })
+    postBt.onclick = function () {
+      // console.log(transition.value.trim().length)
+      if (transition.value.trim().length == 0) {
+        alert('请填写您的留言')
+      } else {
+        let span = document.createElement('span')
+        span.innerHTML = `
+           ${name}
+        <span class="fr">${getTimes()}</span>
+        <p>
+          <span class="msg">${transition.value}<input  id="clear" type="button" value="删除"></span>
+        </p>
+        `
+        comment.insertBefore(span, comment.children[0])
+        transition.value = ''
+
+      }
+    }
+    //清空
+    clearBt.onclick = function () {
+      if (comment.children.length == 0) {
+        alert('没有需要清空的数据')
+      } else {
+        let isOk = confirm('清空后不可恢复，是否确认清空')
+        if (isOk) {
+          comment.innerHTML = ''
+        }
+      }
+    }
+
+    //删除
+    comment.addEventListener('click', function (e) {
+      if (e.target.value == '删除') {
+        comment.remove(e.target.parentNode.parentNode.parentNode)
+      }
+    })
+    //时间
+    function getTimes() {
+      let date = new Date()
+      let Y = date.getFullYear()
+      let M = date.getMonth() + 1
+      let D = date.getDate()
+      let h = date.getHours()
+      let m = date.getMinutes()
+      let s = date.getSeconds()
+      M = M < 10 ? '0' + M : M
+      D = D < 10 ? '0' + D : D
+      h = h < 10 ? '0' + h : h
+      m = m < 10 ? '0' + m : m
+      s = s < 10 ? '0' + s : s
+      return `${Y}-${M}-${D} ${h}:${m}:${s}`
+    }
+    getTimes()
+  </script>
+
+</body>
+
+</html>

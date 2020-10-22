@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.定义一个苹果对象
+        let apple = {
+            color: "red",
+            say: function () {
+                console.log("my color is " + this.color);
+            }
+        }
+
+        // apple.say();
+
+        // 2.定义一个香蕉对象
+        let banana = {
+            color: "yellow"
+        }
+
+        // 3.我们使用apply来改变this的指向
+        // 语法: 函数名.apply(要指向哪个对象))
+        // apply是立即执行的 不需要调用
+        // call也是立即执行的 不需要调用
+        apple.say.apply(banana);
+        apple.say.call(banana);
+
+        // apple.say();
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

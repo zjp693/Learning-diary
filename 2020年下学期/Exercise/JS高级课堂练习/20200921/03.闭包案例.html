@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //计算打车价格
+        //打车起步价格13（3公里）,之后每多一公里增加5块钱，用户输入公里就可以计算打车价格
+        //如果有拥堵情况，总价格多收取10元
+        var car = (function () {
+            var start = 13;//起步价
+            var total = 0;//总价
+            return {
+                //正常的总价 
+                prite: function (n) {
+                    if (n <= 3) {
+                        total = start
+                    } else {
+                        total = start + (n - 3) * 5
+                    }
+                    return total
+                },
+                yd: function (flag) {
+                    return flag ? total + 10 : total
+                }//拥堵之后的价格
+            }
+        })();
+        console.log(car.prite(5));
+        console.log(car.yd(true));
+        console.log(car.prite(1));
+        console.log(car.yd(false));
+    </script>
+</body>
+
+</html>

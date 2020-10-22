@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 日期对象
+
+        // 1.语法: let date = new Date();
+
+        // let date = new Date();
+
+        // console.log(date);  // Thu Oct 24 2019 11:35:00 GMT+0800 (中国标准时间)
+
+
+        // 2.Date()对象的参数
+        // 2.1 逗号分隔年月日
+        // let date = new Date(2019, 10, 24);
+        // console.log(date); // Sun Nov 24 2019 00:00:00 GMT+0800 (中国标准时间)  在js中 月份是从0开始的所以每次碰到月份都要+1
+        // 2.2 -分割年月日
+
+        // let date = new Date("2019-10-24 11:39:40")
+        // console.log(date);
+
+        // 3.Date对象的原始值  从1970年1月1日0时0分0秒到现在的毫秒值
+
+        // let date = new Date();
+        // console.log(date.valueOf()); //1571888636049
+
+
+        // var date = Date.now();
+        // console.log(date); // 1571888684111
+
+        // var date = + new Date();
+        // console.log(date);  // 1571888764155
+
+
+        // 获取具体的年 月 日  小时 分钟 秒 毫秒
+        var date = new Date();
+        // 获取年
+        let year = date.getFullYear();
+        // console.log(year);
+        let month = date.getMonth() + 1;
+        console.log(month);
+        // let day = date.getDay(); // 一周中的第几天 周几
+        // console.log(day);
+        let day = date.getDate();
+        console.log(day); // 一月中的第几天
+        let hour = date.getHours();
+        console.log(hour);
+        let min = date.getMinutes();
+        console.log(min);
+        let scond = date.getSeconds();
+        console.log(scond);
+        let Milliseconds = date.getMilliseconds();
+        console.log(Milliseconds)
+
+    </script>
+</body>
+
+</html>

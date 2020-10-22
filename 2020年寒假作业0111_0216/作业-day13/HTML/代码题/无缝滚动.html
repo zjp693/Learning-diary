@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 800px;
+            margin: 0 auto;
+
+            overflow: hidden;
+        }
+
+        ul {
+            width: calc(126px * 28);
+            height: 86px;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            animation: lunbo 10s linear infinite;
+        }
+
+        ul:hover {
+            animation-play-state: paused;
+        }
+
+        ul li {
+            float: left;
+            list-style-type: none;
+        }
+
+        @keyframes lunbo {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(calc(-126px * 14));
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <ul>
+            <li><img src="./images/nav1.jpg" alt=""></li>
+            <li><img src="./images/nav2.jpg" alt=""></li>
+            <li><img src="./images/nav3.jpg" alt=""></li>
+            <li><img src="./images/nav4.jpg" alt=""></li>
+            <li><img src="./images/nav5.jpg" alt=""></li>
+            <li><img src="./images/nav6.jpg" alt=""></li>
+            <li><img src="./images/nav7.jpg" alt=""></li>
+            <li><img src="./images/nav1.jpg" alt=""></li>
+            <li><img src="./images/nav2.jpg" alt=""></li>
+            <li><img src="./images/nav3.jpg" alt=""></li>
+            <li><img src="./images/nav4.jpg" alt=""></li>
+            <li><img src="./images/nav5.jpg" alt=""></li>
+            <li><img src="./images/nav6.jpg" alt=""></li>
+            <li><img src="./images/nav7.jpg" alt=""></li>
+            <li><img src="./images/nav1.jpg" alt=""></li>
+            <li><img src="./images/nav2.jpg" alt=""></li>
+            <li><img src="./images/nav3.jpg" alt=""></li>
+            <li><img src="./images/nav4.jpg" alt=""></li>
+            <li><img src="./images/nav5.jpg" alt=""></li>
+            <li><img src="./images/nav6.jpg" alt=""></li>
+            <li><img src="./images/nav7.jpg" alt=""></li>
+            <li><img src="./images/nav1.jpg" alt=""></li>
+            <li><img src="./images/nav2.jpg" alt=""></li>
+            <li><img src="./images/nav3.jpg" alt=""></li>
+            <li><img src="./images/nav4.jpg" alt=""></li>
+            <li><img src="./images/nav5.jpg" alt=""></li>
+            <li><img src="./images/nav6.jpg" alt=""></li>
+            <li><img src="./images/nav7.jpg" alt=""></li>
+        </ul>
+    </div>
+</body>
+
+</html>

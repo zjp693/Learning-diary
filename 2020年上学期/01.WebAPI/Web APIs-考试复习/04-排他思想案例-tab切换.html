@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      list-style-type: none;
+    }
+
+    .tab {
+      width: 978px;
+      margin: 100px auto;
+    }
+
+    .tab_list {
+      height: 39px;
+      border: 1px solid #ccc;
+      background-color: #f1f1f1;
+    }
+
+    .tab_list li {
+      float: left;
+      height: 39px;
+      line-height: 39px;
+      padding: 0 20px;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .tab_list .current {
+      background-color: #c81623;
+      color: #fff;
+    }
+
+    .item_info {
+      padding: 20px 0 0 20px;
+    }
+
+    .item {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="tab">
+    <div class="tab_list">
+      <ul>
+        <li class="current">商品介绍</li>
+        <li>规格与包装</li>
+        <li>售后保障</li>
+        <li>商品评价（50000）</li>
+        <li>手机社区</li>
+      </ul>
+    </div>
+    <div class="tab_con">
+            <div class="item" style="display: block;">
+                商品介绍模块内容
+            </div>
+            <div class="item">
+                规格与包装模块内容
+            </div>
+            <div class="item">
+                售后保障模块内容
+            </div>
+            <div class="item">
+                商品评价（50000）模块内容
+            </div>
+            <div class="item">
+                手机社区模块内容
+            </div>
+        </div>
+  </div>
+  <script>
+    // 1.完成排他
+    // 1.1 获取ul中的li
+    let aLi = document.querySelectorAll('li');
+    let aItem = document.querySelectorAll('.item');
+    // 1.2 遍历ul中的li
+    for (let i = 0; i < aLi.length; i++) {
+      // 2.1 在遍历的时候 顺便把li的索引添加为自定义属性
+      aLi[i].setAttribute("index", i);
+      // 1.3 给每个li添加点击事件
+      aLi[i].onclick = function () {
+        // 1.4 排他: 清除所有li身上的current类名
+        for (let j = 0; j < aLi.length; j++) {
+          aLi[j].classList.remove('current');
+        }
+        // 1.5 排他: 给点击的那个li添加current类名
+        this.classList.add('current');
+        // 2.2 获取li的索引
+        let cIndex = this.getAttribute('index');
+        // console.log(cIndex);
+        // 2.3排他: 把所有的内容都隐藏
+          for (let k = 0; k <aItem.length; k++) {
+            aItem[k].style.display = "none";
+          }
+        // 2.4排他: 把索引对应的那个内容显示
+        aItem[cIndex].style.display = "block";
+      }
+    }
+
+
+      // 2.让菜单和内容对应起来 进行显示和隐藏
+      // 2.1 知道菜单是第几个菜单 为了知道是第几个菜单(索引 我们可以在遍历li的是给 li添加索引 设置自定义属性)
+      // 2.2 点击的时候  获取被点击元素的自定义属性中存的索引
+      // 2.3 把所有的内容都隐藏
+      // 2.4 通过索引找到应该显示的内容
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="./lib/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="top">
+        <img src="img/top1.png" alt="" />
+    </div>
+    <div class="louceng">
+        <!-- 楼层1 -->
+        <div class="jd jia">
+            <img src="img/jia.png" alt="" />
+        </div>
+        <!-- 楼层2 -->
+        <div class="jd dian">
+            <img src="img/dian.png" alt="" />
+        </div>
+        <!-- 楼层3 -->
+        <div class="jd fu">
+            <img src="img/fu.png" alt="" />
+        </div>
+        <!-- 楼层4 -->
+        <div class="jd mei">
+            <img src="img/mei.png" alt="" />
+        </div>
+    </div>
+    <div class="bottom">
+        <img src="img/bottom.png" alt="" />
+    </div>
+    <!-- 侧边栏 -->
+    <div class="subnav">
+        <ul>
+            <li>家电通讯</li>
+            <li>电脑数码</li>
+            <li>服饰精品</li>
+            <li>美容珠宝</li>
+        </ul>
+        <div class="back">返回</div>
+    </div>
+    <script src="../../../js/jquery-3.4.1.js"></script>
+    <script>
+        // 获取依次楼层距顶部的距离
+        let jiaTop = $('.jia').offset().top;
+        let dianTop = $('.dian').offset().top;
+        let fuTop = $('.fu').offset().top;
+        let meiTop = $('.mei').offset().top;
+        // 显示功能
+        $(document).scroll(function () {
+            let v = $(document).scrollTop();
+            if (v >= jiaTop) {
+                $('.subnav').show();
+            } else {
+                $('.subnav').hide();
+            }
+            // 到达相应位置选中对应导航
+            if (v >= meiTop) {
+                $('.subnav > ul >li').eq(3).addClass('current').siblings().removeClass('current');
+            } else if (v >= fuTop) {
+                $('.subnav > ul >li').eq(2).addClass('current').siblings().removeClass('current');
+            } else if (v >= dianTop) {
+                $('.subnav > ul >li').eq(1).addClass('current').siblings().removeClass('current');
+            } else if (v >= jiaTop) {
+                $('.subnav > ul >li').eq(0).addClass('current').siblings().removeClass('current');
+            }
+        })
+
+        // 点击导航到达对应楼层
+        // $('.subnav > ul >li').eq(0).click(function () {
+        //     $(document).scrollTop(jiaTop);
+        // })
+        // $('.subnav > ul >li').eq(1).click(function () {
+        //     $(document).scrollTop(dianTop);
+        // })
+        // $('.subnav > ul >li').eq(2).click(function () {
+        //     $(document).scrollTop(fuTop);
+        // })
+        // $('.subnav > ul >li').eq(3).click(function () {
+        //     $(document).scrollTop(meiTop);
+        // })
+
+        // 点击返回
+        $('.subnav > .back').click(function () {
+            $(document).scrollTop(0);
+        })
+    </script>
+</body>
+
+</html>

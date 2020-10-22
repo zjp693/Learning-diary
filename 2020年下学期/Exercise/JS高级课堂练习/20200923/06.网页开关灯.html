@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 1000px;
+            height: 1000px;
+            background: pink
+        }
+
+        .changeColor {
+            background: red ;
+        }
+    </style>
+</head>
+
+
+
+<body>
+    <div id="app">
+
+        <div :class="{changeColor}" @click="changeColor =! changeColor">一个男人的强大，不在于他能摧毁什么，而在于他能保护什么</div>
+
+
+
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        var vm = Vue.createApp({
+            data() {
+                return {
+
+                    changeColor: ''
+                }
+            },
+
+        }).mount("#app")
+
+    </script>
+</body>
+
+</html>

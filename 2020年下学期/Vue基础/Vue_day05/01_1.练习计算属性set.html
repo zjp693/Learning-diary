@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        值1：<input type="text" v-model='data_1'>
+        值2：<input type="text" v-model='data_2'>
+        拼接：<input type="text" v-model='data_3'>
+    </div>
+    <script src="../lib/Vue3.0.js"></script>
+    <script>
+        var vm = Vue.createApp({
+            data() {
+                return {
+                    data_1: '广东',
+                    data_2: '靓仔'
+                }
+            },
+            computed: {
+                data_3: {
+                    get() {
+                        console.log('data');
+                        return this.data_1 + " " + this.data_2
+                    },
+                    set(val) {
+                        console.log(val);
+                        var name = val.split(' ')
+                        this.data_1 = name[0],
+                            this.data_2 = name[1]
+
+                    }
+                }
+            }
+        }).mount('#app')
+    </script>
+</body>
+
+</html>

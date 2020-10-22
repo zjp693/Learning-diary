@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            width: 1950px;
+            height: 2000px;
+        }
+
+        li {
+            margin-bottom: 5px;
+            position: relative;
+            list-style-type: none;
+        }
+
+        .box {
+            /* display: none; */
+            position: fixed;
+            width: 50px;
+            height: 150px;
+            right: 10px;
+            bottom: 250px;
+        }
+
+        .box li {
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+            background: url(./images/sbtn.png) no-repeat;
+        }
+
+        .box li img {
+            display: none;
+            position: absolute;
+            right: 50px;
+            width: 100px;
+            height: 100px;
+        }
+
+        .box .a {
+            background-position: 0 0;
+        }
+
+        .box .b {
+            background-position: 0 -50px;
+        }
+
+        .box .c {
+            background-position: 0 -100px;
+
+        }
+
+        .box .d {
+            background-position: 0 -150px;
+            display: none;
+        }
+
+        .a:hover {
+            background-position: -50px 0;
+        }
+
+        .b:hover {
+            background-position: -50px -50px;
+        }
+
+        .c:hover {
+            background-position: -50px -150px;
+        }
+
+        .d:hover {
+            background-position: -50px -100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <ul>
+            <li class="a"><img src="./images/lrtk_app.png" alt="" class="img"></li>
+            <li class="b"><img src=" ./images/lrtk_weixin.png" alt="" class="imgs"></li>
+            <li class="c"></li>
+            <li class="d"></li>
+        </ul>
+    </div>
+
+    <script>
+        // var lis = document.querySelectorAll("li")
+        // var ul = document.querySelector("ul")
+
+        // for (var i = 0; i < lis.length; i++) {
+        //     if (i == 2) {
+        //         lis[i].style.display = "none"
+        //         continue
+        //     }
+        //     var index = i * 50
+        //     lis[i].style.backgroundPosition = "0 -" + index + "px";
+        // }
+        let a = document.querySelector(".a")
+        let b = document.querySelector(".b")
+        let d = document.querySelector(".d")
+        let e = document.querySelector(".img")
+        let f = document.querySelector(".imgs")
+        a.addEventListener("mouseover", function () {
+            img.style.display = "block"
+            console.log(e);
+
+        })
+        a.addEventListener("mouseout", function () {
+            img.style.display = "none"
+        })
+        b.addEventListener("mouseover", function () {
+            imgs.style.display = "block"
+        })
+        b.addEventListener("mouseout", function () {
+            imgs.style.display = "none"
+        })
+        document.addEventListener("scroll", function () {
+            let pageScroll = document.documentElement.scrollTop || document.body.scrollTop || window.pageYOffset;
+            console.log(pageScroll)
+            if (pageScroll >= 500) {
+                d.style.display = "block"
+            }
+            else {
+                d.style.display = "none"
+            }
+
+        })
+        d.addEventListener("click", function () {
+            document.documentElement.scrollTop = 0;
+        })
+    </script>
+</body>
+
+</html>

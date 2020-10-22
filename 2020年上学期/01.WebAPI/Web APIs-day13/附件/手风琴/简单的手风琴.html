@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>原生js手风琴特效</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        .box {
+            width: 1050px;
+            height: 300px;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+
+        .accordion li {
+            float: left;
+            width: 80px;
+            height: 300px;
+            color: #000;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <ul class="accordion">
+            <li><img src="./images/ifold1.jpg" alt=""></li>
+            <li><img src="./images/ifold2.jpg" alt=""></li>
+            <li><img src="./images/ifold3.jpg" alt=""></li>
+            <li><img src="./images/ifold4.jpg" alt=""></li>
+            <li><img src="./images/ifold5.jpg" alt=""></li>
+            <li><img src="./images/ifold6.jpg" alt=""></li>
+            <li><img src="./images/ifold7.jpg" alt=""></li>
+        </ul>
+    </div>
+    <script>
+        function accordion() {
+            var oBox = document.querySelector(".box");
+            var accordion = oBox.querySelector(".accordion");
+            var oList = accordion.getElementsByTagName("li");
+            var i = 0;
+            var timer = null;
+            //console.log(oList.length);
+            for (var i = 0; i < oList.length; i++) {
+                oList[i].index = i;
+                oList[i].onmouseover = function () {
+                    var index = this.index;
+                    if (timer) {
+                        clearInterval(timer);
+                    }
+                    timer = setInterval(function () {
+                        var iWidth = oBox.offsetWidth;  //盒子的总宽度
+                        //console.log(iWidth); 1050
+                        for (var i = 0; i < oList.length; i++) {
+                            if (index != oList[i].index) {
+                                //设定速度
+                                var speed = (100 - oList[i].offsetWidth) / 10;
+                                speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+                                oList[i].style.width = oList[i].offsetWidth + speed + "px";
+                                iWidth -= oList[i].offsetWidth;
+                            }
+                            oList[index].style.width = iWidth + "px";
+                        }
+                    }, 30);
+                }
+            }
+        }
+        accordion();
+    </script>
+</body>

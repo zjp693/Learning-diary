@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            position: relative;
+            height: 300px;
+            width: 450px;
+            margin: auto;
+        }
+
+        .box-left {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 225px;
+            height: 300px;
+            background-image: url("./images/bg.png")
+        }
+
+        .box-right {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 225px;
+            height: 300px;
+            background-image: url("./images/bg.png")
+        }
+
+        .box-left {
+            transform-origin: left center;
+        }
+
+        .box-right {
+            transform-origin: right center;
+        }
+
+        .box:hover .box-left {
+            transform: rotateY(180deg);
+
+            transition: all 3s;
+        }
+
+        .box:hover .box-right {
+            transform: rotateY(180deg);
+            transition: all 3s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img src="./images/3.jpg" alt="">
+        <div class="box-left">
+
+        </div>
+        <div class="box-right">
+
+        </div>
+    </div>
+</body>
+
+</html>

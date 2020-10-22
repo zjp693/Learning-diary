@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <!-- 注意: vue中自定义指令必须是以v-开头 autofocus -->
+    <input type="text" v-color="msg">
+    <input type="text" v-focus>
+
+  </div>
+  <script src="../lib/Vue3.0.js"></script>
+  <script>
+    // vm是view model 其实也是vue实例 自定义指令在vm上挂载
+    // let vm = Vue.createApp({
+    //   data() {
+    //     return {
+    //       msg: {
+    //         color: "red"
+    //       }
+    //     }
+    //   },
+    //   methods: {},
+    //   // 局部指令
+    //   directives: {
+    //     // 自动聚焦指令
+    //     focus: {
+    //       mounted(el) {
+    //         el.focus();
+    //       }
+    //     },
+    //     // 设置背景颜色
+    //     color: {
+    //       mounted(el, binding) {
+    //         el.style.backgroundColor = binding.value.color;
+    //       }
+    //     }
+    //   }
+    // }).mount('#app');
+
+
+    let vm = Vue.createApp({
+      // data() {
+      //   return {
+      //     msg: {
+      //       color: "red"
+      //     }
+      //   }
+      // },
+      // data: function (){},
+      methods: {},
+      // 局部指令
+      directives: {
+        // 自动聚焦指令
+        focus: {
+          mounted(el) {
+            el.focus();
+          }
+        },
+        // 设置背景颜色
+        color: {
+          mounted(el, binding) {
+            el.style.backgroundColor = binding.value.color;
+          }
+        }
+      }
+    }).mount('#app');
+
+  </script>
+</body>
+
+</html>

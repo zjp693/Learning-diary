@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <input type="button" value="切换显示状态" @click='showbutton'>
+        <input type="button" value="累加年龄" @click='addbutton'>
+        <img v-show='isshow'
+            src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1483173397,1259750106&fm=26&gp=0.jpg" alt="">
+        <img v-show='age>=18'
+            src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1483173397,1259750106&fm=26&gp=0.jpg" alt="">
+    </div>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+
+
+        let vm = new Vue({
+            el: '#app',
+            data: {
+                isshow: false,
+                age: 17
+            },
+            
+            methods: {
+                showbutton: function () {
+                    this.isshow = !this.isshow
+                },
+                addbutton: function () {
+                    this.age++
+                }
+            }
+        })
+
+    </script>
+</body>
+
+</html>

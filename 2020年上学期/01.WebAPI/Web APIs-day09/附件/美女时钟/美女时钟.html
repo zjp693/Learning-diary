@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <img src="meimei/00_00.jpg" id="im" />
+</body>
+<script>
+  function f1() {
+    //获取当前日期
+    var dt = new Date();
+    var hour = dt.getHours();
+    //  console.log(hour);
+    var second = dt.getSeconds();
+    //	console.log(hour+"...."+second)
+    hour = hour < 10 ? "0" + hour : hour;
+    second = second < 10 ? "0" + second : second;
+    // console.log(hour + "...." + second)
+
+    document.getElementById("im").src = "meimei/" + hour + "_" + second + ".jpg";
+  }
+  //页面加载完毕后过一秒执行函数
+  f1();
+  setInterval(f1, 1000)
+  // var dt = new Date()
+
+
+
+</script>
+
+</html>
