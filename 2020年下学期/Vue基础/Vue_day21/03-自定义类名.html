@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    p {
+      width: 200px;
+      height: 50px;
+      background-color: red;
+     
+    }
+
+    .w-enters-from {
+      opacity: 0;
+    }
+
+    .w-leaves-from {
+      opacity: 1;
+    }
+
+    .w-enters-active,
+    .w-leaves-active {
+      transition: all;
+      animation: change 2s;
+    }
+
+    @keyframes change {
+      0%{
+          background-color: green;
+        }
+        50%{
+          background-color: red;
+        }
+        100%{
+          background-color: green;
+        }
+    }
+    
+  </style>
+</head>
+<body>
+  <div id="app">
+    <button @click="active = !active">按钮</button>
+    <transition enter-from-class="w-enters-from" leave-from-class="w-leaves-from" enter-active-class="w-enters-active"  leave-active-class="w-leaves-active">
+      <p v-if="active">我是内容</p>
+    </transition>
+ 
+  </div>
+
+  <script src="./lib/vue-3.0.0.js"></script>
+  <script>
+    let app = Vue.createApp({
+      data(){
+        return {
+          active: false
+        }
+      }
+    }).mount("#app");
+  </script>
+</body>
+</html>
