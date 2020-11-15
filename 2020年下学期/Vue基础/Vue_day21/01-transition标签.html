@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,8 +10,10 @@
       width: 200px;
       height: 50px;
       background-color: red;
-     
     }
+
+
+
 
     .v-enter-from,
     .v-leave-to {
@@ -29,19 +32,20 @@
     }
   </style>
 </head>
+
 <body>
   <div id="app">
     <button @click="active = !active">按钮</button>
-    <transition >
+    <transition>
       <p v-if="active">我是内容</p>
     </transition>
- 
+
   </div>
 
   <script src="./lib/vue-3.0.0.js"></script>
   <script>
     let app = Vue.createApp({
-      data(){
+      data() {
         return {
           active: true
         }
@@ -49,4 +53,5 @@
     }).mount("#app");
   </script>
 </body>
+
 </html>
