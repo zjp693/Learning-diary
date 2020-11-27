@@ -31,12 +31,12 @@
                         v-model:value="form.username"
                       >
                         <template #prefix
-                          ><UserOutlined style="color:rgba(0,0,0,.25)"
+                          ><UserOutlined style="color: rgba(0, 0, 0, 0.25)"
                         /></template>
                       </a-input>
                     </a-form-item>
                     <!-- 密码 -->
-                    <a-form-item :wrapperCol="{ span: 24 }"  name="password">
+                    <a-form-item :wrapperCol="{ span: 24 }" name="password">
                       <a-input-password
                         type="password"
                         size="large"
@@ -44,7 +44,7 @@
                         v-model:value="form.password"
                       >
                         <template #prefix
-                          ><LockOutlined style="color:rgba(0,0,0,.25)"
+                          ><LockOutlined style="color: rgba(0, 0, 0, 0.25)"
                         /></template>
                       </a-input-password>
                     </a-form-item>
@@ -61,7 +61,7 @@
                         placeholder="请输入手机号"
                       >
                         <template #prefix
-                          ><MobileOutlined style="color:rgba(0,0,0,.25)"
+                          ><MobileOutlined style="color: rgba(0, 0, 0, 0.25)"
                         /></template>
                       </a-input>
                     </a-form-item>
@@ -75,7 +75,7 @@
                             placeholder="请输入验证码"
                           >
                             <template #prefix
-                              ><MailOutlined style="color:rgba(0,0,0,.25)"
+                              ><MailOutlined style="color: rgba(0, 0, 0, 0.25)"
                             /></template>
                           </a-input>
                         </a-form-item>
@@ -106,7 +106,13 @@
             <a-row style="margin-top: 24px">
               <a-col :span="24">
                 <a-form-item :wrapperCol="{ span: 24 }">
-                  <a-button type="primary" block size="large" @click="handleSubmit">确定</a-button>
+                  <a-button
+                    type="primary"
+                    block
+                    size="large"
+                    @click="handleSubmit"
+                    >确定</a-button
+                  >
                 </a-form-item>
               </a-col>
             </a-row>
@@ -116,9 +122,9 @@
             <a-row>
               <a-col :span="24">
                 <span>其他登录方式 </span
-                ><AlipayCircleOutlined  class="item-icon" />
-                <TaobaoCircleOutlined  class="item-icon" />
-                <WeiboCircleOutlined  class="item-icon" />
+                ><AlipayCircleOutlined class="item-icon" />
+                <TaobaoCircleOutlined class="item-icon" />
+                <WeiboCircleOutlined class="item-icon" />
                 <router-link to="#" style="float: right">注册账户</router-link>
               </a-col>
             </a-row>
@@ -141,15 +147,20 @@ import {
   MailOutlined,
   AlipayCircleOutlined,
   TaobaoCircleOutlined,
-  WeiboCircleOutlined
+  WeiboCircleOutlined,
 } from "@ant-design/icons-vue";
+
+import { httpPost } from "../utils/http";
+import { user } from "../api";
+import { message } from "ant-design-vue";
+
 export default {
   data() {
     return {
       // 定义表单数据模型(对象)
       form: {
-        username: "",
-        password: ""
+        username: "admin",
+        password: "123456",
       },
       // 定义表单校验规则
       rules: {
@@ -157,27 +168,51 @@ export default {
         username: [
           // required 必须的
           // trigger 啥时候触发
-          { required: true, message: '请输入用户名', trigger: 'blur' },
-          { min: 4, max: 16, message: '长度在4-16个字符之间', trigger: 'blur' },
+          { required: true, message: "请输入用户名", trigger: "blur" },
+          { min: 4, max: 16, message: "长度在4-16个字符之间", trigger: "blur" },
         ],
-         password: [
+        password: [
           // required 必须的
           // trigger 啥时候触发
-          { required: true, message: '请输入密码', trigger: 'blur' },
-          { min: 6, max: 16, message: '长度在6-16个字符之间', trigger: 'blur' },
-        ]
-      }
-    }
+          { required: true, message: "请输入密码", trigger: "blur" },
+          { min: 6, max: 16, message: "长度在6-16个字符之间", trigger: "blur" },
+        ],
+      },
+    };
   },
   methods: {
-    handleSubmit(){
-     this.$refs.loginForm.validate().then(() => {
-          console.log('values', this.form);
+    handleSubmit() {
+      this.$refs.loginForm
+        .validate()
+        .then(() => {
+          console.log("values", this.form);
+          let URL = user.loginUser;
+          let farms = {
+            username: this.form.username,
+            password: this.form.password,
+          };
+          httpPost(URL, farms)
+            .then((response) => {
+              console.log(response);
+              let { data, meta } = response;
+              console.log(data, meta);
+              if (meta.status == 400) {
+                message.error(meta.msg);
+              }
+              if (meta.status == 200) {
+                message.success(meta.msg);
+                window.sessionStorage.setItem("token", data.token);
+                this.$router.push("/home");
+              }
+            })
+            .catch((error) => {
+              console.log(error);
+            });
         })
-        .catch(error => {
-          console.log('error', error);
+        .catch((error) => {
+          console.log("error", error);
         });
-    }
+    },
   },
   components: {
     UserOutlined,
@@ -186,8 +221,8 @@ export default {
     MailOutlined,
     AlipayCircleOutlined,
     TaobaoCircleOutlined,
-    WeiboCircleOutlined
-  }
+    WeiboCircleOutlined,
+  },
 };
 </script>
 

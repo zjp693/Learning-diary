@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .grid {
+      margin: auto;
+      width: 530px;
+      text-align: center;
+    }
+
+    .grid table {
+      border-top: 1px solid #C2D89A;
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .grid th,
+    td {
+      padding: 10;
+      border: 1px dashed orange;
+      height: 35px;
+      line-height: 35px;
+    }
+
+    .grid th {
+      background-color: orange;
+    }
+
+    .grid .book {
+      padding-bottom: 10px;
+      padding-top: 5px;
+      background-color: orange;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <div class="grid">
+      <div>
+        <h1>图书管理</h1>
+        <div class="book">
+          <div>
+            <label for="id">
+              编号：
+            </label>
+            <input type="text" id="id" v-model="id" :disabled="flag">
+            <label for="name">
+              名称：
+            </label>
+            <input type="text" id="name" v-model="name">
+            <button @click="hanadd">提交</button>
+          </div>
+        </div>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>编号</th>
+            <th>名称</th>
+            <th>时间</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- 渲染列表 -->
+          <tr v-for="(item) in books" :Key="item.id">
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.date}}</td>
+            <td>
+              <a href="" @click.prevent="hanEdit(item.id)">修改</a>
+              <span>|</span>
+              <a href="" @click.prevent="hanmover(item.id)">删除</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="./lib/vue3.0.js"></script>
+  <script src="./lib/axios.js"></script>
+  <script>
+    axios.defaults.baseURL = 'http://localhost:3000/';
+    var vm = Vue.createApp({
+      // 初始化数据
+      data() {
+        return {
+          flag: false,
+          have: false,
+          id: '',
+          name: '',
+          books: []
+        }
+      },
+      // 一打开页面就进入，
+      created() {
+        this.hanserst()
+      },
+      methods: {
+        async hanserst() {
+          var res = await axios.get('books')
+          // console.log(res);
+          this.books = res.data
+        },
+        // 添加
+        async hanadd() {
+          if (this.flag == true) {
+            var res = await axios.put(`books/${this.id}`, {
+              name: this.name
+            })
+            if (res.data.status == 200) {
+              this.hanserst()
+              this.id = this.name = ''
+              this.flag = false
+            }
+          } else {
+            var res = await axios.post('books', {
+              name: this.name
+            })
+            if (res.data.status == 200) {
+              this.hanserst()
+              this.id = this.name = ''
+            }
+          }
+
+        },
+        // 删除
+        async hanmover(id) {
+          var res = await axios.delete(`books/${id}`)
+          if (res.data.status == 200) {
+            this.hanserst()
+          }
+        },
+        // 修改
+        async hanEdit(id) {
+          var res = await axios.get(`books/${id}`)
+          this.id = res.data.id
+          this.name = res.data.name
+          this.flag = true
+        },
+      }
+    }).mount("#app")
+
+  </script>
+
+</body>
+
+</html>

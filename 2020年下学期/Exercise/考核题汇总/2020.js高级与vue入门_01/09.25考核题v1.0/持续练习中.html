@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 深拷贝
+        var obj = {
+            id: 1,
+            name: '广东靓仔',
+            msg: {
+                age: 18
+            },
+            color: ['都是鱼肉，只是砧板不同', ['丑陋的中国人']]
+        }
+
+        var o = {}
+        // // console.log(Array.isArray(obj.color[0]));
+        // function deepCopy(newObj, oldObj) {
+        //     for (var k in oldObj) {
+        //         var item = oldObj[k];
+
+        //         //判断是否为数组
+        //         if (Array.isArray(item)) {
+        //             newObj[k] = []
+        //             // console.log(item);
+        //             deepCopy(newObj[k], item)
+        //         } else if (item instanceof Object) {//判断是否为对象
+        //             newObj[k] = {}
+        //             deepCopy(newObj[k], item)
+        //         } else {
+        //             //简单数据类型
+        //             newObj[k] = item
+        //         }
+
+        //     }
+        // }
+        // deepCopy(o, obj)
+        // console.log(o);
+
+
+
+        function deepCopy(newObj, oldObj) {
+            for (var k in oldObj) {
+                var item = oldObj[k]
+                //判断是否为数组
+                if (Array.isArray(item)) {
+                    newObj[k] = []
+                    deepCopy(newObj[k], item)
+                } else if (item instanceof Object) { //判断是否为对象
+                    newObj[k] = []
+                    deepCopy((newObj[k], item))
+                } else {//基本数据类型
+                    newObj[k] = item
+                }
+            }
+        }
+        deepCopy(o, obj)
+        console.log(o);
+
+
+// 
+    </script>
+</body>
+
+</html>
