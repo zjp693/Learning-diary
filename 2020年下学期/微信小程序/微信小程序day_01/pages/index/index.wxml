@@ -1,0 +1,22 @@
+<!--index.wxml-->
+<view>
+  <view class="header">
+    <view class="header_content">
+      <view class="header_content_left">
+        <image src="/pages/image/01.jpg">
+        </image>
+        <text class="words">赚钱小祝福</text>
+      </view>
+      <view class="header_content_right">
+        <view class="words">
+          <text class="icon">￥</text>
+          <text class="span">1200.00</text>
+          <text class="deposit">可提现金额</text>
+        </view>
+        <!-- <view class="image">
+          <image src="/pages/image/02.jpg"></image>
+        </view> -->
+      </view>
+    </view>
+  </view>
+</view>
