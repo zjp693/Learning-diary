@@ -1,0 +1,7 @@
+<!--pages/abount/abount.wxml-->
+<text>我是abount页面</text>
+<navigator open-type="navigateBack" delta="1">返回上一页</navigator>
+
+<navigator open-type="navigateBack" delta="2">返回上上一页</navigator>
+
+<button  type="primary" size="mini" bindtap="hanleback">返回</button>

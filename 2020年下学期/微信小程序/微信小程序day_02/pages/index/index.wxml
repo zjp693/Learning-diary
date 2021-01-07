@@ -1,0 +1,16 @@
+<!--index.wxml-->
+
+
+<view>
+<h1>首页</h1>
+<!-- /* 声明式导航 */ -->
+<!-- /* 01.导航到非 tabBar页面 */ -->
+  <navigator url="/pages/abount/abount?age=18">跳转到 about 页面</navigator>
+<!-- 02.导航到tabBar页面 -->
+  <navigator url="/pages/logs/logs" open-type="switchTab">跳转到 日志 页面</navigator>
+  <!-- 小程序导航 -- 编程式导航 -->
+  <button type="primary" bindtap="hanleviewUser" size="mini"> about 页面</button>
+
+  <button type="primary" bindtap="hanleviewLogs" size="mini"> 日志 页面</button>
+</view>
+

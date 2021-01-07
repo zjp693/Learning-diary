@@ -10,12 +10,15 @@
         <view class="words">
           <text class="icon">￥</text>
           <text class="span">1200.00</text>
+          <image src="/pages/image/02.png"></image>
           <text class="deposit">可提现金额</text>
         </view>
-        <!-- <view class="image">
-          <image src="/pages/image/02.jpg"></image>
-        </view> -->
       </view>
     </view>
   </view>
+</view>
+<!-- 营业额 -->
+<view>
+  
+
 </view>
