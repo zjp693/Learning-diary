@@ -1,0 +1,147 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="page-body">
+    <view class="page-section page-section-spacing swiper">
+      <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}"
+        interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px"
+        next-margin="{{nextMargin}}px">
+        <block wx:for="{{background}}" wx:key="*this">
+          <swiper-item>
+            <view class="swiper-item {{item}}"></view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+</view>
+
+<view class="middle">
+  <text class="date">日期</text>
+  <text class="special">专题</text>
+</view>
+<view class="box" bindtap="dian">
+  <view class="content">
+    <image class="img" src="/images/专题/02.png"></image>
+    <text class="title">忙里忙外 回家吃饭</text>
+    <text class="price">19.9元<text>起</text></text>
+    <view class="btton">
+      <image src="/images/专题/组 35 拷贝@2x.png"></image>
+    </view>
+    <view class="icon">
+      <view class="icon_1">
+        <image src="/images/专题/chakan@2x.png"></image>
+        <text>1220</text>
+      </view>
+      <view class="icon_2">
+        <image src="/images/专题/xin_5@2x.png"> </image>
+        <text>1000</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="content">
+    <view class="img2">
+      <image src="/images/专题/01.png"></image>
+    </view>
+    <text class="title">忙里忙外 回家吃饭</text>
+    <text class="price">19.9元<text>起</text></text>
+    <view class="btton">
+      <image src="/images/专题/组 35 拷贝@2x.png"></image>
+    </view>
+    <view class="icon">
+      <view class="icon_1">
+        <image src="/images/专题/chakan@2x.png"></image>
+        <text>1220</text>
+      </view>
+      <view class="icon_2">
+        <image src="/images/专题/xin_5@2x.png"> </image>
+        <text>1000</text>
+      </view>
+    </view>
+  </view>
+  <view class="content">
+    <view class="img2">
+      <image src="/images/专题/01.png"></image>
+    </view>
+    <text class="title">忙里忙外 回家吃饭</text>
+    <text class="price">19.9元<text>起</text></text>
+    <view class="btton">
+      <image src="/images/专题/组 35 拷贝@2x.png"></image>
+    </view>
+    <view class="icon">
+      <view class="icon_1">
+        <image src="/images/专题/chakan@2x.png"></image>
+        <text>1220</text>
+      </view>
+      <view class="icon_2">
+        <image src="/images/专题/xin_5@2x.png"> </image>
+        <text>1000</text>
+      </view>
+    </view>
+  </view>
+  <view class="content">
+    <view class="img2">
+      <image src="/images/专题/01.png"></image>
+    </view>
+    <text class="title">忙里忙外 回家吃饭</text>
+    <text class="price">19.9元<text>起</text></text>
+    <view class="btton">
+      <image src="/images/专题/组 35 拷贝 2@2x.png"></image>
+    </view>
+    <view class="icon">
+      <view class="icon_1">
+        <image src="/images/专题/chakan@2x.png"></image>
+        <text>1220</text>
+      </view>
+      <view class="icon_2">
+        <image src="/images/专题/xin_5@2x.png"> </image>
+        <text>1000</text>
+      </view>
+    </view>
+  </view>
+  <view class="content">
+    <view class="img2">
+      <image src="/images/专题/01.png"></image>
+    </view>
+    <text class="title">忙里忙外 回家吃饭</text>
+    <text class="price">19.9元<text>起</text></text>
+    <view class="btton">
+      <image src="/images/专题/组 35 拷贝 2@2x.png"></image>
+    </view>
+    <view class="icon">
+      <view class="icon_1">
+        <image src="/images/专题/chakan@2x.png"></image>
+        <text>1220</text>
+      </view>
+      <view class="icon_2">
+        <image src="/images/专题/xin_5@2x.png"> </image>
+        <text>1000</text>
+      </view>
+    </view>
+  </view>
+  <view class="content">
+    <view class="img2">
+      <image src="/images/专题/01.png"></image>
+    </view>
+    <text class="title">忙里忙外 回家吃饭</text>
+    <text class="price">19.9元<text>起</text></text>
+    <view class="btton">
+      <image src="/images/专题/组 35 拷贝 2@2x.png"></image>
+    </view>
+    <view class="icon">
+      <view class="icon_1">
+        <image src="/images/专题/chakan@2x.png"></image>
+        <text>1220</text>
+      </view>
+      <view class="icon_2">
+        <image src="/images/专题/xin_5@2x.png"> </image>
+        <text>1000</text>
+      </view>
+
+    </view>
+  </view>
+
+
+
+
+</view>

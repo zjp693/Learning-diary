@@ -1,0 +1,36 @@
+<view class="cont">
+  <!-- 搜索 -->
+  <Search class="cate-search"></Search>
+  <!-- 轮播图 -->
+  <view class="carouselMap">
+    <!-- 轮播图区域 -->
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{background}}" wx:key="*this">
+        <swiper-item>
+          <view class="swiper-item">
+            <image src="{{item.image_src}}"></image>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <!--分类  -->
+  <view class="cates">
+    <view class="cates_list" wx:for="{{cates}}" wx:key="*this">
+      <image src="{{item.image_src}}"></image>
+    </view>
+  </view>
+  <!--l'c -->
+  <view class="floorList">
+    <block wx:for="{{floorList}}" wx:key="*this">
+      <view class="floor_item_title">
+        <image src="{{item.floor_title.image_src}}"></image>
+      </view>
+      <view class="floor_img_box">
+        <image class="floor_item_pic" wx:for="{{item.product_list}}" wx:key="index" src="{{item.image_src}}"
+          style="width: {{item.image_width}}rpx;" />
+      </view>
+    </block>
+  </view>
+
+</view>

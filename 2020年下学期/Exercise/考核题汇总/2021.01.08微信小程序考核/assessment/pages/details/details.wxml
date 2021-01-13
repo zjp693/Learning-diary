@@ -1,0 +1,40 @@
+<!--pages/details/details.wxml-->
+<view class="context">
+  <text class="white"></text>
+  <text class="empty"></text>
+  <view class="icon_title">
+    <image src="/images/查看/xin@2x.png"></image>
+    <image src="/images/查看/xin 拷贝@2x.png"></image>
+  </view>
+  <text class="title">如何研制一碗香喷喷的方便面</text>
+  <view class="data">
+    <view class="icon">
+      <image src="/images/查看/xin@2x.png ">
+      </image>
+      <text>1220</text>
+    </view>
+    <view class="icon icon_1">
+      <image src="/images/查看/chakan_1@2x.png"></image>
+      <text>1000</text>
+    </view>
+    <text class="date">11-02</text>
+  </view>
+  <view class="details">
+    <image src="/images/查看/图层 76@2x.png"></image>
+    <text>
+      前段时间严选3周年推出了高好评、高复购、高性价比的10大经典商品。冻干牛肉面就在其中，累计销量已经超过了300万碗。
+
+      所以，我这次开发的新品冻干藤椒豚骨面，不只对标别人 家的竞品，更想挑战自家经典。
+    </text>
+  </view>
+  <view class="details">
+    <image src="/images/查看/图层 77@2x.png"></image>
+    <text>不变的，是宇航“黑科技”——FD冻干工艺。煮好的面条、 大片叉烧、蔬菜、骨汤都在-30°C真空环境下冷冻干燥， 不仅保留了原本的色香味，还能大大减少营养流失，媲美 现煮。
+
+      改变的，当然是藤椒新风味。我在油包中特别添加了新鲜 的高纯度藤椒油，入口就是地道鲜麻的滋味，保证“椒”你 胃口大开!
+
+      喜欢冻干牛肉面的你，真的要试试这款冻干藤椒面。
+
+    </text>
+  </view>
+</view>
