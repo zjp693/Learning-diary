@@ -1,0 +1,73 @@
+/* pages/cates/cates.wxss */
+.cate-search {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.cateList {
+  display: flex;
+  height: 100%;
+}
+
+.cateList .left {
+  height: calc(100vh - 80rpx);
+  width: 200rpx;
+  flex: 2
+}
+
+.cateList_left_item_title {
+  display: block;
+  font-size: 28rpx;
+  /* line-height: 150rpx; */
+}
+
+.cateList_left_item {
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  background: #f7f7f7;
+}
+
+.cateList .right {
+  flex: 5;
+  height: calc(100vh - 80rpx);
+  text-align: center;
+}
+
+
+.cateList_right_item_children_children {
+  display: flex;
+  /* float: left; */
+  /* flex-flow: wrap column; */
+  flex-wrap: wrap;
+}
+
+.cateList_right_item_list {
+  width: 33.33%;
+  height: 180rpx;
+  /* padding: 28rpx; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.cateList_right_item_list image {
+  width: 50%;
+}
+
+
+.cateList_right_item_children_title {
+  /* padding-top: 30rpx; */
+  font-weight: bold;
+  height: 80rpx;
+  /* text-align: center; */
+}
+
+.cateList .left .active {
+  color: #c00002;
+  border-left: 5rpx solid currentColor;
+}

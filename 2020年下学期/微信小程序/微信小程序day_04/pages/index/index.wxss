@@ -1,0 +1,53 @@
+.cont {
+  margin: 0;
+  padding: 0;
+}
+
+.carouselMap {
+  width: 100%;
+  height: 100%;
+}
+
+.carouselMap {
+  width: 100%;
+  height: 100%;
+  /* box-sizing: border-box; */
+}
+
+.carouselMap .swiper-item {
+  width: 100%;
+  height: 100%;
+}
+
+.carouselMap image {
+  width: 100%;
+  height: 100%;
+}
+
+.cates {
+  display: flex;
+  justify-content: space-around;
+  margin: 40rpx 0;
+}
+
+.cates_list image {
+  width: 128rpx;
+  height: 140rpx;
+}
+
+.floorList .floor_item_title image {
+  height: 50rpx;
+  width: 640rpx;
+  display: block;
+}
+
+.floorList .floor_img_box .floor_item_pic {
+  float: left;
+  height: 190rpx;
+  margin: 8rpx;
+  margin-top: 0;
+}
+
+.floorList .floor_img_box .floor_item_pic:nth-child(1) {
+  height: 390rpx;
+}

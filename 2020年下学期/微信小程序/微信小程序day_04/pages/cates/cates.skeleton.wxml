@@ -1,0 +1,162 @@
+<!--
+此文件为开发者工具生成，生成时间: 2021/1/13 上午10:34:14 
+使用方法：
+在 C:\Users\张建平\Desktop\Learning-diary\2020年下学期\微信小程序\微信小程序day_03\pages\cates\cates.wxml 引入模板
+
+```
+<import src="cates.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{loading}}" />
+```
+
+在 C:\Users\张建平\Desktop\Learning-diary\2020年下学期\微信小程序\微信小程序day_03\pages\cates\cates.wxss 中引入样式
+```
+@import "./cates.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view>
+      <view is="components/SearchComponent/SearchComponent" class="cate-search">
+        <view class="SearchComponent--search_input">
+          <navigator class="SearchComponent--search_text" open-type="navigate">
+            <text class="SearchComponent--iconfont SearchComponent--icon-fangdajing sk-pseudo sk-pseudo-circle"></text>
+            <text decode="true" class="sk-transparent sk-text-14-2857-381 sk-text">&nbsp;搜索</text>
+          </navigator>
+        </view>
+      </view>
+      <view class="cateList">
+        <scroll-view class="left" scroll-y="true">
+          <view class="cateList_left_item">
+            <view class="sk-transparent sk-text-32-5000-338 sk-text" style="background-position-x: 50%;">大家电</view>
+          </view>
+          <view class="cateList_left_item">
+            <view class="sk-transparent sk-text-32-5000-810 sk-text" style="background-position-x: 50%;">热门推荐</view>
+          </view>
+          <view class="cateList_left_item">
+            <view class="sk-transparent sk-text-32-5000-737 sk-text" style="background-position-x: 50%;">海外购</view>
+          </view>
+          <view class="cateList_left_item">
+            <view class="sk-transparent sk-text-32-5000-7 sk-text" style="background-position-x: 50%;">苏宁房产</view>
+          </view>
+          <view class="cateList_left_item">
+            <view class="sk-transparent sk-text-32-5000-1000 sk-text" style="background-position-x: 50%;">手机相机</view>
+          </view>
+          <view class="cateList_left_item">
+            <view class="sk-transparent sk-text-32-5000-963 sk-text" style="background-position-x: 50%;">电脑办公</view>
+          </view>
+          <view class="cateList_left_item">
+            <view class="sk-transparent sk-text-32-5000-194 sk-text" style="background-position-x: 50%;">厨卫电器</view>
+          </view>
+          <view class="cateList_left_item">
+            <view class="sk-transparent sk-text-32-5000-967 sk-text" style="background-position-x: 50%;">食品酒水</view>
+          </view>
+          <view class="cateList_left_item">
+            <view class="sk-transparent sk-text-32-5000-322 sk-text" style="background-position-x: 50%;">居家生活</view>
+          </view>
+          <view class="cateList_left_item">
+            <view class="sk-transparent sk-text-32-5000-300 sk-text" style="background-position-x: 50%;">厨房电器</view>
+          </view>
+          <view class="cateList_left_item">
+            <view class="sk-transparent sk-text-32-5000-720 sk-text" style="background-position-x: 50%;">生活电器</view>
+          </view>
+          <view class="cateList_left_item">
+            <view class="sk-transparent sk-text-32-5000-158 sk-text" style="background-position-x: 50%;">个护健康</view>
+          </view>
+          <view class="cateList_left_item">
+            <view class="sk-transparent sk-text-32-5000-86 sk-text" style="background-position-x: 50%;">烹饪厨具</view>
+          </view>
+        </scroll-view>
+        <scroll-view class="right" scroll-y="true">
+          <view class="cateList_right_item">
+            <view class="cateList_right_item_children">
+              <view class="sk-transparent sk-text-14-2857-137 sk-text">电视</view>
+              <view>
+                <text class="sk-transparent sk-text-14-2857-109 sk-text">曲面电视</text>
+              </view>
+              <view>
+                <text class="sk-transparent sk-text-14-2857-75 sk-text">海信</text>
+              </view>
+              <view>
+                <text class="sk-transparent sk-text-14-2857-897 sk-text">夏普</text>
+              </view>
+              <view>
+                <text class="sk-transparent sk-text-14-2857-85 sk-text">创维</text>
+              </view>
+              <view>
+                <text class="sk-transparent sk-text-14-2857-629 sk-text">TCL</text>
+              </view>
+              <view>
+                <text class="sk-transparent sk-text-14-2857-87 sk-text">PPTV</text>
+              </view>
+              <view>
+                <text class="sk-transparent sk-text-14-2857-115 sk-text">小米</text>
+              </view>
+              <view>
+                <text class="sk-transparent sk-text-14-2857-861 sk-text">长虹</text>
+              </view>
+              <view>
+                <text class="sk-transparent sk-text-14-2857-284 sk-text">康佳</text>
+              </view>
+              <view>
+                <text class="sk-transparent sk-text-14-2857-763 sk-text">三星</text>
+              </view>
+              <view>
+                <text class="sk-transparent sk-text-14-2857-307 sk-text">飞利浦</text>
+              </view>
+              <view>
+                <text class="sk-transparent sk-text-14-2857-250 sk-text">索尼</text>
+              </view>
+              <view>
+                <text class="sk-transparent sk-text-14-2857-394 sk-text">先锋</text>
+              </view>
+              <view>
+                <text class="sk-transparent sk-text-14-2857-212 sk-text">家庭影院</text>
+              </view>
+              <view>
+                <text class="sk-transparent sk-text-14-2857-86 sk-text">音响</text>
+              </view>
+              <view>
+                <text class="sk-transparent sk-text-14-2857-228 sk-text">盒子</text>
+              </view>
+            </view>
+            <view class="cateList_right_item_children">
+              <view class="sk-transparent sk-text-14-2857-266 sk-text">空调</view>
+              <view>
+                <text class="sk-transparent sk-text-14-2857-165 sk-text">变频空调</text>
+              </view>
+              <view>
+                <text class="sk-transparent sk-text-14-2857-788 sk-text">立柜空调</text>
+              </view>
+              <view>
+                <text class="sk-transparent sk-text-14-2857-812 sk-text">挂壁空调</text>
+              </view>
+              <view>
+                <text class="sk-transparent sk-text-14-2857-635 sk-text">中央空调</text>
+              </view>
+              <view>
+                <text class="sk-transparent sk-text-14-2857-226 sk-text">移动空调</text>
+              </view>
+              <view>
+                <text class="sk-transparent sk-text-14-2857-618 sk-text">海尔</text>
+              </view>
+              <view>
+                <text class="sk-transparent sk-text-14-2857-377 sk-text">三菱重工</text>
+              </view>
+              <view>
+                <text class="sk-transparent sk-text-14-2857-719 sk-text">志高</text>
+              </view>
+              <view>
+                <text class="sk-transparent sk-text-14-2857-404 sk-text">奥克斯</text>
+              </view>
+              <view>
+                <text class="sk-transparent sk-text-14-2857-950 sk-text">长虹</text>
+              </view>
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+    </view>
+  </view>
+</template>
