@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 
 // 
 import Father from "../Father";
+
 export default class App extends Component {
     constructor() {
         super();
@@ -13,7 +14,8 @@ export default class App extends Component {
     // 通过ref 对象获取文本框的值
             getTxt = () => {
     console.log(this.txt.current.value);
-}
+    }
+    
     render() {
         return (
             <div>
