@@ -1,0 +1,32 @@
+.list-enter {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.list-enter-active {
+  transform: translateX(0%);
+  opacity: 1;
+  transition: all 1s;
+}
+
+.list-enter-done {
+  opacity: 1;
+  transform: translateX(0%);
+}
+
+
+.list-exit {
+  opacity: 1;
+  transform: translateX(0%);
+}
+
+.list-exit-active {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 1s;
+}
+
+.list-exit-done {
+  opacity: 0;
+  transform: translateX(100%);
+}
