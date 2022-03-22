@@ -1,11 +1,10 @@
 import React from 'react'
 
-// src/App.js
-import ImageToggle from "./Components/ImageToggle";
+import Message from './Components/ChildrenMap.js';
 
 function App() {
   return (
-    <ImageToggle>
+    <Message>
       <img
         src="https://images.pexels.com/photos/10198426/pexels-photo-10198426.jpeg"
         alt=""
@@ -26,7 +25,7 @@ function App() {
         width="300px"
         alt=""
       />
-    </ImageToggle>
+    </Message>
   );
 }
 
