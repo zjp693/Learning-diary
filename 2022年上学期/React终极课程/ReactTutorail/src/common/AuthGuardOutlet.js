@@ -10,5 +10,4 @@ function AuthGuardOutlet() {
   // 如果没通过, 重定向到执行授权的页面
   return auth ? <Outlet /> : <Navigate to="/login" />;
 }
-
 export default AuthGuardOutlet;

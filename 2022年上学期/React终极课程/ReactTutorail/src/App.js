@@ -1,13 +1,9 @@
-import React from "react";
-import { BrowserRouter } from "react-router-dom";
-import ScrollTop from "./common/ScrollTop";
+import React from 'react'
 
 function App() {
   return (
-    <BrowserRouter>
-      <ScrollTop />
-    </BrowserRouter>
-  );
+    <div>App</div>
+  )
 }
 
-export default App;
+export default App

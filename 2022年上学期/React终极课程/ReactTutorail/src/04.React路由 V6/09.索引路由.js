@@ -8,20 +8,14 @@ function App() {
   return (
     <>
       <BrowserRouter>
-    <Routes>
-    <Route path='/news' element={<News/>}>
-          <Route index element={ <InnerNews/>}></Route>
-          <Route path="inner" element={<InnerNews/> }></Route>
-          <Route path="outer" element={<OuterNews/>}></Route>
-    
-
-        </Route>
-
-    </Routes>
-    
+        <Routes>
+          <Route path="/news" element={<News />}>
+            <Route index element={<InnerNews />}></Route>
+            <Route path="inner" element={<InnerNews />}></Route>
+            <Route path="outer" element={<OuterNews />}></Route>
+          </Route>
+        </Routes>
       </BrowserRouter>
-
-
     </>
   );
 }
